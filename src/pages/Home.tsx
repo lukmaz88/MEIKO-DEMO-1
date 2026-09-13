@@ -8,7 +8,7 @@ import { useHref, useLang, useT } from '../i18n/LangContext';
 import '../styles/home.css';
 
 const services = [
-  { key: 'svcForwarding', image: 'still-office.jpg', hash: '' },
+  { key: 'svcForwarding', image: 'gen-forwarding.jpg', hash: '' },
   { key: 'svcWarehousing', image: 'still-aisle.jpg', hash: '' },
   { key: 'svcTransport', image: 'gen-transport.jpg', hash: '' },
   { key: 'svcWarehousing', image: 'still-forklift.jpg', hash: '#cross-docking' },

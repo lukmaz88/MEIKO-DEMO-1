@@ -51,7 +51,7 @@ export const en: Content = {
         key: 'svcForwarding', slug: 'spedycja', name: 'Freight forwarding',
         short: 'Road, air and ocean shipments organised by one person who owns your order.',
         lead: 'We plan and supervise the shipment from pickup to delivery. You talk to one person; we talk to carriers, ports, airports and customs.',
-        image: '/media/still-office.jpg',
+        image: '/media/gen-forwarding.jpg',
         params: [
           { label: 'Partner carriers', factKey: 'carrierPartners' },
           { label: 'Countries served', factKey: 'countries' },

@@ -51,7 +51,7 @@ export const pl: Content = {
         key: 'svcForwarding', slug: 'spedycja', name: 'Spedycja',
         short: 'Organizacja przewozu drogowego, lotniczego i morskiego z jednym opiekunem zlecenia.',
         lead: 'Planujemy i nadzorujemy przewóz od odbioru do dostawy. Ty rozmawiasz z jedną osobą, my z przewoźnikami, portami, lotniskami i urzędem celnym.',
-        image: '/media/still-office.jpg',
+        image: '/media/gen-forwarding.jpg',
         params: [
           { label: 'Przewoźników partnerskich', factKey: 'carrierPartners' },
           { label: 'Krajów obsługi', factKey: 'countries' },
