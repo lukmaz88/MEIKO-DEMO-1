@@ -152,7 +152,7 @@
 .phero h1 { margin-bottom: 24px; max-width: 26ch; font-size: clamp(38px, 3.8vw, 64px); }
 .phero-img { position: relative; min-height: 60dvh; display: flex; align-items: center; color: #fff; background: var(--ink); padding: 0; overflow: hidden; }
 .phero-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.phero-img .container { position: relative; }
+.phero-img .container { position: relative; width: 100%; }
 .phero-copy { padding: 96px 0; max-width: 1000px; }
 .phero-img h1 { color: #fff; }
 .phero-img .lead { color: rgba(255, 255, 255, .88); }
