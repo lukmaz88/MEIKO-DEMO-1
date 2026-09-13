@@ -62,10 +62,6 @@ export function QuoteCard({ initialService }: { initialService?: string }) {
 
       <button type="submit" className="btn btn-primary">{t.quote.submit}</button>
       {err && <p className="qf-err" role="alert">{err}</p>}
-      <p className="qnote">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
-        {t.quote.reply}
-      </p>
     </form>
   );
 }
