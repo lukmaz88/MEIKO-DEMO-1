@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { usePageTitle } from '../components/layout/Layout';
 import { Certs, DeptContacts, NetworkMarquee, ProofStrip } from '../components/sections';
@@ -14,6 +14,9 @@ const services = [
   { key: 'svcWarehousing', image: 'still-forklift.jpg', hash: '#cross-docking' },
 ] as const;
 const audienceImages = ['still-bigbags.jpg', 'still-aisle.jpg', 'still-forklift.jpg'];
+/** Split a line into word spans with a staggered delay index. */
+const words = (line: string, offset: number) =>
+  line.split(' ').map((w, i) => <span className="w" style={{ '--i': offset + i } as React.CSSProperties} key={w + i}>{w} </span>);
 
 export function Home() {
   usePageTitle();
@@ -36,7 +39,7 @@ export function Home() {
         <div className="home-hero-shade" />
         <Container>
           <div className="home-hero-copy enter">
-            <h1>{c.title[0]}<span>{c.title[1]}</span></h1>
+            <h1>{words(c.title[0], 0)}<span>{words(c.title[1], c.title[0].split(' ').length)}</span></h1>
             <p>{c.intro}</p>
             <div className="hero-cta">
               <Button to={href('quote')}>{t.cta.quote}</Button>
@@ -64,7 +67,6 @@ export function Home() {
               </Link>
             ))}
           </div>
-          <div className="home-customs"><p><strong>{c.customs}</strong> {c.customsText}</p><Link to={href('svcForwarding')}>{c.customsLink}</Link></div>
         </Container>
       </Reveal>
 
@@ -98,13 +100,12 @@ export function Home() {
               <Link to={href(w.key)} className={`home-warehouse ${i === 2 ? 'planned' : ''}`} key={w.key}>
                 <div className="home-warehouse-photo">
                   <ImgReveal src={w.image!} />
-                  <span className="warehouse-status">{i === 2 ? c.planned : c.operational}</span>
-                  {i === 2 && <small>{c.render}</small>}
                 </div>
                 <div className="home-warehouse-copy">
                   <h3>{w.name} · {w.city}</h3>
                   <p>{w.address}</p>
                   <div className="warehouse-feature">{c.warehouseTags[i]}</div>
+                  {i === 2 && <p className="muted">{c.planned} · {c.render}</p>}
                 </div>
               </Link>
             ))}
@@ -115,8 +116,7 @@ export function Home() {
       <Reveal as="section" className="home-section home-about">
         <Container>
           <figure>
-            <ImgReveal src="/media/team.jpg" alt={c.teamCaption} className="home-about-img parallax" />
-            <figcaption><span>{c.teamCaption}</span><span aria-hidden="true" lang="ja">絆</span></figcaption>
+            <ImgReveal src="/media/team.jpg" className="home-about-img parallax" />
           </figure>
           <div className="home-about-copy">
             <h2>{c.whyTitle}</h2>

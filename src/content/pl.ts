@@ -207,9 +207,9 @@ export const pl: Content = {
     },
     timelineTitle: 'Od lokalnego oddziału do hubu logistycznego',
     timeline: [
-      { era: '2005–2016', title: 'Budowa fundamentów', text: 'Otwarcie oddziału w Gliwicach i start operacji magazynowych oraz spedycyjnych.' },
-      { era: '2018–2023', title: 'Jakość i kompetencje celne', text: 'Certyfikacja ISO 9001, status AEO, własna agencja celna i skład celny.' },
-      { era: '2025–2027', title: 'Inwestycje i technologia', text: 'Budowa trzeciego magazynu w Dąbrowie Górniczej, rozwój systemów cyfrowych dla klientów i kierowców.' },
+      { era: '2005-2016', title: 'Budowa fundamentów', text: 'Otwarcie oddziału w Gliwicach i start operacji magazynowych oraz spedycyjnych.' },
+      { era: '2018-2023', title: 'Jakość i kompetencje celne', text: 'Certyfikacja ISO 9001, status AEO, własna agencja celna i skład celny.' },
+      { era: '2025-2027', title: 'Inwestycje i technologia', text: 'Budowa trzeciego magazynu w Dąbrowie Górniczej, rozwój systemów cyfrowych dla klientów i kierowców.' },
     ],
     valuesTitle: 'Wartości, które przywieźliśmy z Japonii',
     valuesLead: 'Nie hasła na ścianie, lecz sposób pracy: dokładność, odpowiedzialność i długie relacje.',
@@ -253,7 +253,7 @@ export const pl: Content = {
   },
   contact: {
     title: 'Kontakt',
-    lead: 'Wybierz dział albo lokalizację. Odpowiadamy w godzinach 8:00–16:00 w dni robocze.',
+    lead: 'Wybierz dział albo lokalizację. Odpowiadamy w godzinach 8:00-16:00 w dni robocze.',
     locationsTitle: 'Lokalizacje',
     locations: [
       { name: 'Siedziba i Magazyn 1 · Gliwice', address: 'ul. Leona Wyczółkowskiego 121, 44-109 Gliwice' },

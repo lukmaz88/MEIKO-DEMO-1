@@ -354,3 +354,7 @@
   .card p, .depts a, .aud p, .why-list p { font-size: 18px; }
   .marquee-track span { font-size: clamp(26px, 1.8vw, 36px); }
 }
+
+.reveal .sec-head h2 { clip-path: inset(0 0 100% 0); transform: translateY(24px); transition: clip-path .8s var(--ease), transform .8s var(--ease); }
+.reveal.in .sec-head h2 { clip-path: inset(0 0 -10% 0); transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal .sec-head h2 { clip-path: none; transform: none; transition: none; } }

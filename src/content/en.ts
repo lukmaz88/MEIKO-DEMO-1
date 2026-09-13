@@ -207,9 +207,9 @@ export const en: Content = {
     },
     timelineTitle: 'From a local branch to a logistics hub',
     timeline: [
-      { era: '2005–2016', title: 'Building the foundation', text: 'Opening the Gliwice branch and launching warehousing and forwarding operations.' },
-      { era: '2018–2023', title: 'Quality and customs expertise', text: 'ISO 9001 certification, AEO status, our own customs agency and bonded warehouse.' },
-      { era: '2025–2027', title: 'Investment and technology', text: 'Construction of the third warehouse in Dąbrowa Górnicza and digital systems for customers and drivers.' },
+      { era: '2005-2016', title: 'Building the foundation', text: 'Opening the Gliwice branch and launching warehousing and forwarding operations.' },
+      { era: '2018-2023', title: 'Quality and customs expertise', text: 'ISO 9001 certification, AEO status, our own customs agency and bonded warehouse.' },
+      { era: '2025-2027', title: 'Investment and technology', text: 'Construction of the third warehouse in Dąbrowa Górnicza and digital systems for customers and drivers.' },
     ],
     valuesTitle: 'Values we brought from Japan',
     valuesLead: 'Not slogans on a wall but a way of working: accuracy, responsibility and long relationships.',
@@ -253,7 +253,7 @@ export const en: Content = {
   },
   contact: {
     title: 'Contact',
-    lead: 'Pick a department or a location. We answer 8:00–16:00 CET on working days.',
+    lead: 'Pick a department or a location. We answer 8:00-16:00 CET on working days.',
     locationsTitle: 'Locations',
     locations: [
       { name: 'Head office and Warehouse 1 · Gliwice', address: 'ul. Leona Wyczółkowskiego 121, 44-109 Gliwice, Poland' },

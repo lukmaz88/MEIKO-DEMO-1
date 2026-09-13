@@ -8,7 +8,7 @@ import { SHOW_APPROVAL_MARKS } from '../../config';
 export function usePageTitle(title?: string) {
   const t = useT();
   useEffect(() => {
-    document.title = title ? `${title} – ${t.meta.titleSuffix}` : t.meta.siteName;
+    document.title = title ? `${title} | ${t.meta.titleSuffix}` : t.meta.siteName;
   }, [title, t]);
 }
 
