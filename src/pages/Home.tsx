@@ -136,7 +136,7 @@ export function Home() {
         </Container>
       </Reveal>
 
-      <section className="home-quality"><Container><h2>{c.qualityTitle}</h2></Container><Certs compact /></section>
+      <section className="home-quality"><Container><h2>{c.qualityTitle}</h2></Container><Certs compact heading={false} /></section>
 
       <DeptContacts />
 

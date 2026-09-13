@@ -44,7 +44,7 @@ export type Content = {
   };
   audiences: { title: string; lead: string; items: { title: string; text: string }[] };
   why: { title: string; kanji: string; kanjiMeaning: string; items: { trait: string; fact: string }[] };
-  warehouses: { title: string; lead: string; renderPlaceholder: string; mapPlaceholder: string; launchNote: string; items: WarehouseContent[] };
+  warehouses: { title: string; lead: string; renderPlaceholder: string; mapPlaceholder: string; launchNote: string; featuresTitle: string; distancesTitle: string; distances: { place: string; km: string }[]; items: WarehouseContent[] };
   certs: { title: string; lead: string; items: { code: string; name: string; text: string }[] };
   depts: { title: string; lead: string; items: { name: string; phone: string; email: string }[] };
   quoteBand: { title: string; lead: string };
@@ -68,6 +68,7 @@ export type Content = {
   quality: { title: string; lead: string; outcomesTitle: string; outcomes: { title: string; text: string }[] };
   contact: { title: string; lead: string; locationsTitle: string; locations: { name: string; address: string }[] };
   footer: { legal: string; docs: string[]; pagesTitle: string; docsTitle: string; langTitle: string; note: string; address: string };
+  faqTitle: string;
   approval: { tooltip: string; legend: string };
   notFound: { title: string; text: string };
 };

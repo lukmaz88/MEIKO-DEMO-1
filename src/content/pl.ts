@@ -140,6 +140,18 @@ export const pl: Content = {
     renderPlaceholder: 'Wizualizacja · do wygenerowania',
     mapPlaceholder: 'Mapa · Google Maps przy wdrożeniu',
     launchNote: 'Start operacyjny planowany na czerwiec 2027. Trwa budowa, przyjmujemy rezerwacje powierzchni.',
+    featuresTitle: 'Co oferuje obiekt',
+    distancesTitle: 'Odległości',
+    distances: [
+      { place: 'Autostrady A1 i A4', km: '5 km' },
+      { place: 'Lotnisko Katowice', km: '50 km' },
+      { place: 'Ostrawa', km: '70 km' },
+      { place: 'Kraków', km: '85 km' },
+      { place: 'Warszawa', km: '315 km' },
+      { place: 'Porty Gdańsk i Gdynia', km: '580 km' },
+      { place: 'Hamburg', km: '900 km' },
+      { place: 'Antwerpia', km: '1 180 km' },
+    ],
     items: [
       {
         key: 'whGliwice1', name: 'Magazyn 1', city: 'Gliwice', address: 'ul. Leona Wyczółkowskiego 121, 44-109 Gliwice',
@@ -270,6 +282,7 @@ export const pl: Content = {
     note: 'Część grupy Meiko Trans Co., Ltd., Nagoja, Japonia.',
     address: 'ul. Leona Wyczółkowskiego 121, 44-109 Gliwice',
   },
+  faqTitle: 'Pytania i odpowiedzi',
   approval: { tooltip: 'Wartość przykładowa, do zatwierdzenia przed publikacją', legend: 'wartość do zatwierdzenia' },
   notFound: { title: 'Nie ma takiej strony.', text: 'Adres mógł się zmienić. Wróć na stronę główną i wybierz z menu.' },
 };

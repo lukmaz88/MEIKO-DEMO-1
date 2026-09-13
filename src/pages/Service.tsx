@@ -31,7 +31,7 @@ export function Service({ k }: { k: ServiceContent['key'] }) {
       )}
       <Certs compact />
       <Reveal as="section" className="section">
-        <Container><Faq items={s.faq} /></Container>
+        <Container><div className="sec-head"><h2>{t.faqTitle}</h2></div><Faq items={s.faq} /></Container>
       </Reveal>
       <QuoteBlock service={s.slug} />
     </>

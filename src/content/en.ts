@@ -140,6 +140,18 @@ export const en: Content = {
     renderPlaceholder: 'Visualisation · to be generated',
     mapPlaceholder: 'Map · Google Maps at launch',
     launchNote: 'Operational launch planned for June 2027. Construction is under way and space reservations are open.',
+    featuresTitle: 'What the site offers',
+    distancesTitle: 'Distances',
+    distances: [
+      { place: 'A1 and A4 motorways', km: '5 km' },
+      { place: 'Katowice Airport', km: '50 km' },
+      { place: 'Ostrava', km: '70 km' },
+      { place: 'Kraków', km: '85 km' },
+      { place: 'Warsaw', km: '315 km' },
+      { place: 'Ports of Gdańsk and Gdynia', km: '580 km' },
+      { place: 'Hamburg', km: '900 km' },
+      { place: 'Antwerp', km: '1,180 km' },
+    ],
     items: [
       {
         key: 'whGliwice1', name: 'Warehouse 1', city: 'Gliwice', address: 'ul. Leona Wyczółkowskiego 121, 44-109 Gliwice',
@@ -270,6 +282,7 @@ export const en: Content = {
     note: 'Part of Meiko Trans Co., Ltd., Nagoya, Japan.',
     address: 'ul. Leona Wyczółkowskiego 121, 44-109 Gliwice, Poland',
   },
+  faqTitle: 'Questions and answers',
   approval: { tooltip: 'Sample value, to be approved before publication', legend: 'value to be approved' },
   notFound: { title: 'This page does not exist.', text: 'The address may have changed. Go back to the home page and pick from the menu.' },
 };

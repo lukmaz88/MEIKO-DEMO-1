@@ -1,6 +1,6 @@
 import { usePageTitle } from '../components/layout/Layout';
-import { DeptContacts, ParamTable, QuoteBlock } from '../components/sections';
-import { Container, ImgReveal, PageHero, Placeholder, Reveal } from '../components/ui';
+import { DeptContacts, Distances, ParamTable, QuoteBlock } from '../components/sections';
+import { Container, ImgReveal, PageHero, Reveal } from '../components/ui';
 import type { WarehouseContent } from '../content/types';
 import { useLang, useT } from '../i18n/LangContext';
 
@@ -19,13 +19,11 @@ export function Warehouse({ k }: { k: WarehouseContent['key'] }) {
           <ParamTable rows={w.params} />
           <div className="two">
             <div>
+              <h2 className="h2-sm">{t.warehouses.featuresTitle}</h2>
               <ul className="feat">{w.features.map((f) => <li key={f}>{f}</li>)}</ul>
               {w.badge && <p className="lead" style={{ marginTop: 32 }}>{t.warehouses.launchNote}</p>}
             </div>
-            <div>
-              <p style={{ marginBottom: 16 }}>{w.address}</p>
-              <Placeholder label={t.warehouses.mapPlaceholder} className="map" />
-            </div>
+            <Distances address={w.address} />
           </div>
         </Container>
       </section>

@@ -165,16 +165,16 @@ export function WarehouseTiles() {
 }
 
 /* ---------------- Certs ---------------- */
-export function Certs({ compact = false }: { compact?: boolean }) {
+export function Certs({ compact = false, heading = true }: { compact?: boolean; heading?: boolean }) {
   const t = useT();
   const href = useHref();
   return (
     <Reveal as="section" className="section">
       <Container>
-        {!compact && (
+        {heading && (
           <div className="sec-head">
             <h2>{t.certs.title}</h2>
-            <p className="lead">{t.certs.lead}</p>
+            {!compact && <p className="lead">{t.certs.lead}</p>}
           </div>
         )}
         <div className="certs stagger">
@@ -237,6 +237,20 @@ export function QuoteBlock({ service }: { service?: string }) {
         </div>
       </Container>
     </section>
+  );
+}
+
+/* ---------------- Distances (replaces map placeholders) ---------------- */
+export function Distances({ address }: { address?: string }) {
+  const t = useT();
+  return (
+    <div className="dist">
+      <h3>{t.warehouses.distancesTitle}</h3>
+      {address && <p className="dist-addr">{address}</p>}
+      <ul>
+        {t.warehouses.distances.map((d) => <li key={d.place}><span>{d.place}</span><strong>{d.km}</strong></li>)}
+      </ul>
+    </div>
   );
 }
 

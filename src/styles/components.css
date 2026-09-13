@@ -409,3 +409,17 @@
 @keyframes markin { to { transform: translate(-50%, -50%) scale(1); opacity: 1; } }
 @keyframes markout { to { opacity: 0; transform: translate(-50%, -50%) scale(1.15); } }
 @media (prefers-reduced-motion: reduce) { .tl::before, .tl > div::before { transform: none; transition: none; } .val-card .kanji { filter: none; opacity: 1; transform: none; transition: none; } .intro { display: none; } }
+
+/* distances block: dark card with a two-column list */
+.dist { background: var(--ink); color: #fff; border-radius: var(--r); padding: 36px 40px; }
+.dist h3 { color: #fff; margin-bottom: 8px; }
+.dist-addr { color: rgba(255, 255, 255, .7); font-size: 15px; margin-bottom: 20px; }
+.dist ul { columns: 2; column-gap: 40px; }
+.dist li { break-inside: avoid; display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, .14); font-size: 15px; color: rgba(255, 255, 255, .85); }
+.dist li strong { font-family: var(--font-h); font-weight: 700; color: #fff; white-space: nowrap; }
+@media (max-width: 700px) { .dist ul { columns: 1; } .dist { padding: 28px; } }
+.h2-sm { font-size: clamp(26px, 2.2vw, 34px); margin-bottom: 24px; }
+.locs-list .loc { padding: 22px 0; border-top: 1px solid var(--line); }
+.locs-list .loc:last-of-type { border-bottom: 1px solid var(--line); }
+.locs-list .loc h3 { font-size: 19px; margin-bottom: 6px; }
+.locs-list .loc p { color: var(--ink-2); font-size: 16px; }

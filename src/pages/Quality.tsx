@@ -9,7 +9,7 @@ export function Quality() {
   return (
     <>
       <PageHero title={t.quality.title} lead={t.quality.lead} />
-      <Certs compact />
+      <Certs compact heading={false} />
       <Reveal as="section" className="section">
         <Container>
           <div className="sec-head"><h2>{t.quality.outcomesTitle}</h2></div>
