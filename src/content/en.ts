@@ -268,6 +268,7 @@ export const en: Content = {
   quality: {
     title: 'Quality and certifications',
     lead: 'ISO 9001:2015 certificate, AEO authorisation and a quality policy signed by the board. Click a document to see the original. Below, what they mean for the customer.',
+    stats: { aeo: 'AEO status held continuously since', iso: 'ISO 9001 certificate valid until', sites: 'certified sites in Gliwice' },
     outcomesTitle: 'What it means in practice',
     outcomes: [
       { title: 'Consistent quality', text: 'Every order passes the same checkpoints, whoever handles it.' },

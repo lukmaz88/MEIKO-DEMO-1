@@ -268,6 +268,7 @@ export const pl: Content = {
   quality: {
     title: 'Jakość i certyfikaty',
     lead: 'Certyfikat ISO 9001:2015, pozwolenie AEO i polityka jakości podpisana przez zarząd. Kliknij dokument, aby zobaczyć oryginał. Poniżej, co z nich wynika dla klienta.',
+    stats: { aeo: 'status AEO nieprzerwanie od', iso: 'certyfikat ISO 9001 ważny do', sites: 'certyfikowane lokalizacje w Gliwicach' },
     outcomesTitle: 'Co to oznacza w praktyce',
     outcomes: [
       { title: 'Powtarzalna jakość', text: 'Każde zlecenie przechodzi te same punkty kontrolne, niezależnie od tego, kto je obsługuje.' },

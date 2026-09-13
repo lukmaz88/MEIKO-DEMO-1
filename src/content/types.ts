@@ -73,7 +73,7 @@ export type Content = {
     values: { kanji: string; romaji: string; meaning: string }[];
     network: { title: string; lead: string; regions: { name: string; cities: string }[] };
   };
-  quality: { title: string; lead: string; outcomesTitle: string; outcomes: { title: string; text: string }[] };
+  quality: { title: string; lead: string; stats: { aeo: string; iso: string; sites: string }; outcomesTitle: string; outcomes: { title: string; text: string }[] };
   contact: { title: string; lead: string; locationsTitle: string; locations: { name: string; address: string }[] };
   footer: { legal: string; docs: string[]; pagesTitle: string; docsTitle: string; langTitle: string; note: string; address: string };
   faqTitle: string;
