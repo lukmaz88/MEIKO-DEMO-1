@@ -214,10 +214,13 @@
 @media (max-width: 800px) {
   .ind-panels { flex-direction: column; height: auto; gap: 8px; }
   .ind-panel { flex: none; height: 120px; transition: height .7s var(--ease-io); }
-  .ind-panel.on { height: 520px; }
+  .ind-panel.on { flex: none; height: min(540px, 78vh); }
   .ind-name { left: 20px; bottom: 20px; font-size: 17px; }
   .ind-name::before { width: 24px; margin-bottom: 10px; }
-  .ind-panel.on .ind-shade { background: linear-gradient(0deg, rgba(6, 28, 46, .95) 0%, rgba(6, 28, 46, .6) 55%, rgba(6, 28, 46, .1) 100%); }
+  .ind-panel.on .ind-shade { background: linear-gradient(0deg, rgba(6, 28, 46, .97) 0%, rgba(6, 28, 46, .86) 45%, rgba(6, 28, 46, .45) 75%, rgba(6, 28, 46, .15) 100%); }
+  .ind-panel.on .ind-name { display: none; }
+  .ind-panel > img { filter: saturate(.5) brightness(.6); }
+  .ind-panel.on > img { filter: saturate(.9) brightness(.85); }
   .ind-copy { left: 20px; right: 20px; bottom: 24px; width: auto; }
   .ind-copy h3 { font-size: 24px; }
 }
