@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" fill="none">
+  <defs>
+    <clipPath id="k"><path d="M20 21 Q20 13 27 11 L38 7 L38 39 L61 9 Q64 6 70 9 L79 15 Q83 19 79 24 L54 55 L82 83 Q85 88 80 92 L70 96 Q65 97 61 93 L38 66 L38 95 L27 92 Q20 90 20 82 L20 60 L6 73 Z"/></clipPath>
+  </defs>
+  <g transform="scale(.48)">
+    <path fill="#1656A3" d="M20 21 Q20 13 27 11 L38 7 L38 39 L61 9 Q64 6 70 9 L79 15 Q83 19 79 24 L54 55 L82 83 Q85 88 80 92 L70 96 Q65 97 61 93 L38 66 L38 95 L27 92 Q20 90 20 82 L20 60 L6 73 Z"/>
+    <polyline clip-path="url(#k)" points="4 72 29 41 42 55 55 41 74 66" stroke="#fff" stroke-width="10" stroke-linejoin="miter" stroke-miterlimit="6"/>
+  </g>
+  <text x="56" y="33" font-family="Manrope, Inter, system-ui, sans-serif" font-weight="800" font-size="26" letter-spacing="1" fill="#0E2841">MEIKO TRANS</text>
+</svg>
