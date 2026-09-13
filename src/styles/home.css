@@ -77,8 +77,8 @@
 .home-quality { padding: 72px 0; background: white; }
 .home-quality h2 { font-size: 32px; }
 .home-quality > .section { padding: 32px 0 0; }
-.home-quality .cert { background: #f6f7f8; grid-template-columns: 72px 1fr; gap: 24px; padding: 28px; }
-.home-quality .cert img, .home-quality .cert-mark { width: 72px; font-size: 20px; }
+.home-quality .cert { background: #f6f7f8; grid-template-columns: 72px 1fr; gap: 20px; padding: 24px; }
+.home-quality .cert-zoom, .home-quality .cert img { width: 72px; }
 .home-quality .cert .code { font-size: 23px; }
 .home-quality .cert .name { font-size: 14px; }
 .home-quality .cert p { font-size: 13px; line-height: 1.75; }
@@ -120,7 +120,7 @@
   .home-about-img, .home-about-img img { min-height: 0; height: 350px; }
   .home-quality { padding: 56px 0; }
   .home-quality .cert { grid-template-columns: 64px 1fr; padding: 22px; gap: 18px; }
-  .home-quality .cert img, .home-quality .cert-mark { width: 64px; }
+  .home-quality .cert-zoom, .home-quality .cert img { width: 64px; }
   .home-steps { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 390px) {

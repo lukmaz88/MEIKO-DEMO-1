@@ -178,10 +178,11 @@ export const pl: Content = {
   certs: {
     title: 'Jakość i certyfikaty',
     zoom: 'Powiększ certyfikat',
-    lead: 'Dwa dokumenty, które mówią więcej niż deklaracje. Oba audytowane przez podmioty zewnętrzne.',
+    lead: 'Trzy dokumenty, które mówią więcej niż deklaracje. Kliknij, aby zobaczyć oryginał.',
     items: [
-      { code: 'ISO 9001:2015', name: 'System zarządzania jakością', text: 'Certyfikat obejmuje spedycję krajową i międzynarodową oraz usługi magazynowe. Audyt nadzoru co roku.' },
-      { code: 'AEO', name: 'Upoważniony przedsiębiorca', text: 'Status nadany przez administrację celną: uproszczenia celne, mniej kontroli fizycznych, szybsze odprawy.' },
+      { code: 'ISO 9001:2015', name: 'System zarządzania jakością', text: 'Certyfikat PN-EN ISO 9001:2015 nr 2456/07/2024/J/R wydany przez Polską Akademię Jakości Cert dla obu lokalizacji w Gliwicach. Zakres: międzynarodowe i krajowe usługi spedycyjno-logistyczne. Ważny do 20.07.2027.', image: '/media/cert-iso.jpg' },
+      { code: 'AEO', name: 'Upoważniony przedsiębiorca', text: 'Pozwolenie AEO nr PLAEOF330000190092 wydane przez Dyrektora Izby Administracji Skarbowej w Katowicach, obowiązuje od 23.12.2019. Zakres: uproszczenia celne oraz bezpieczeństwo i ochrona.', image: '/media/cert-aeo.jpg' },
+      { code: 'Polityka jakości', name: 'Zobowiązanie zarządu', text: 'Cele: zero niezgodności, poprawa satysfakcji i zaufania klienta, szkolenie i rozwój pracowników, zgodność z wymaganiami prawnymi i regulacyjnymi. Podpisana przez prezesa zarządu 01.10.2022.', image: '/media/cert-policy.jpg' },
     ],
   },
   depts: {

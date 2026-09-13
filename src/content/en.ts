@@ -178,10 +178,11 @@ export const en: Content = {
   certs: {
     title: 'Quality and certifications',
     zoom: 'Enlarge certificate',
-    lead: 'Two documents that say more than declarations. Both audited by external bodies.',
+    lead: 'Three documents that say more than declarations. Click to see the original.',
     items: [
-      { code: 'ISO 9001:2015', name: 'Quality management system', text: 'Covers domestic and international freight forwarding and warehousing services. Surveillance audit every year.' },
-      { code: 'AEO', name: 'Authorised Economic Operator', text: 'Granted by the customs administration: customs simplifications, fewer physical inspections, faster clearances.' },
+      { code: 'ISO 9001:2015', name: 'Quality management system', text: 'PN-EN ISO 9001:2015 certificate no. 2456/07/2024/J/R issued by Polska Akademia Jakości Cert for both Gliwice sites. Scope: international and domestic forwarding and logistics services. Valid until 20.07.2027.', image: '/media/cert-iso.jpg' },
+      { code: 'AEO', name: 'Authorised Economic Operator', text: 'AEO authorisation no. PLAEOF330000190092 issued by the Director of the Tax Administration Chamber in Katowice, in force since 23.12.2019. Scope: customs simplifications plus security and safety.', image: '/media/cert-aeo.jpg' },
+      { code: 'Quality policy', name: 'Management commitment', text: 'Goals: zero non-conformities, higher customer satisfaction and trust, staff training and development, compliance with legal and regulatory requirements. Signed by the CEO on 01.10.2022.', image: '/media/cert-policy.jpg' },
     ],
   },
   depts: {

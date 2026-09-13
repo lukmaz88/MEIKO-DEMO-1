@@ -45,7 +45,7 @@ export type Content = {
   audiences: { title: string; lead: string; items: { title: string; text: string }[] };
   why: { title: string; kanji: string; kanjiMeaning: string; items: { trait: string; fact: string }[] };
   warehouses: { title: string; lead: string; renderPlaceholder: string; mapPlaceholder: string; launchNote: string; featuresTitle: string; distancesTitle: string; distances: { place: string; km: string }[]; items: WarehouseContent[] };
-  certs: { title: string; lead: string; zoom: string; items: { code: string; name: string; text: string }[] };
+  certs: { title: string; lead: string; zoom: string; items: { code: string; name: string; text: string; image: string }[] };
   depts: { title: string; lead: string; items: { name: string; phone: string; email: string }[] };
   quoteBand: { title: string; lead: string };
   quote: {

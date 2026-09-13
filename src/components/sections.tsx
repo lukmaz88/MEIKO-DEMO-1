@@ -169,10 +169,11 @@ export function WarehouseTiles() {
 export function Certs({ compact = false, heading = true }: { compact?: boolean; heading?: boolean }) {
   const t = useT();
   const href = useHref();
-  const [zoom, setZoom] = useState(false);
+  const [zoom, setZoom] = useState<number | null>(null);
+  const open = zoom === null ? null : t.certs.items[zoom];
   return (
     <Reveal as="section" className="section">
-      {zoom && <Lightbox src="/media/iso-9001-full.jpg" alt={t.certs.items[0].code} onClose={() => setZoom(false)} />}
+      {open && <Lightbox src={open.image} alt={open.code} onClose={() => setZoom(null)} />}
       <Container>
         {heading && (
           <div className="sec-head">
@@ -183,12 +184,10 @@ export function Certs({ compact = false, heading = true }: { compact?: boolean; 
         <div className="certs stagger">
           {t.certs.items.map((c, i) => (
             <Link key={c.code} to={href('quality')} className="cert">
-              {i === 0 ? (
-                <button type="button" className="cert-zoom" aria-label={t.certs.zoom} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setZoom(true); }}>
-                  <img src="/media/iso-9001.jpg" alt="" loading="lazy" />
-                  <span aria-hidden="true">+</span>
-                </button>
-              ) : <span className="cert-mark" aria-hidden="true">AEO</span>}
+              <button type="button" className="cert-zoom" aria-label={`${t.certs.zoom}: ${c.code}`} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setZoom(i); }}>
+                <img src={c.image} alt="" loading="lazy" />
+                <span aria-hidden="true">+</span>
+              </button>
               <div>
                 <div className="code">{c.code}</div>
                 <div className="name">{c.name}</div>
