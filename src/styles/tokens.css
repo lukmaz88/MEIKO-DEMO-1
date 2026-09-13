@@ -1,0 +1,47 @@
+:root {
+  --bg: #F7F8FA;
+  --surface: #FFFFFF;
+  --ink: #0E2841;
+  --ink-2: #4B5872;
+  --ink-3: #8A94A8;
+  --line: #DDE2EA;
+  --accent: #1656A3;
+  --accent-ink: #0F3F7A;
+  --accent-soft: #E8EFF9;
+  --red: #C8102E;
+  --font-h: "Manrope", system-ui, sans-serif;
+  --font-b: "Inter", system-ui, sans-serif;
+  --font-jp: "Noto Sans JP", sans-serif;
+  --max: 1280px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --sec: clamp(80px, 12vw, 160px);
+  --r: 6px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font: 400 17px/1.6 var(--font-b); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--font-h); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; text-wrap: balance; }
+h1 { font-size: clamp(40px, 6vw, 80px); }
+h2 { font-size: clamp(32px, 4vw, 52px); }
+h3 { font-size: clamp(20px, 1.6vw, 24px); letter-spacing: -.01em; line-height: 1.25; }
+p { max-width: 62ch; }
+a { color: inherit; text-decoration: none; }
+img, video { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+ul { padding: 0; list-style: none; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.section { padding: var(--sec) 0; }
+.section + .section { padding-top: 0; }
+.lead { font-size: clamp(18px, 1.4vw, 21px); color: var(--ink-2); max-width: 56ch; }
+.muted { color: var(--ink-3); }
+.eyebrow { font: 600 12px/1 var(--font-b); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.eyebrow::before { content: ""; width: 20px; height: 1px; background: currentColor; }
+.hero-copy .eyebrow { color: #fff; opacity: .8; }
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } html { scroll-behavior: auto; } }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
