@@ -74,6 +74,7 @@ export function Quote() {
       <PageHero title={t.quote.title} lead={t.quote.lead} />
       <section className="section">
         <Container>
+          <div className="quote-grid">
           <form className="form" onSubmit={submit} noValidate>
             {field('contact')}
             {field('email', 'email')}
@@ -86,6 +87,16 @@ export function Quote() {
               <span className="muted">{t.quote.reply}</span>
             </div>
           </form>
+          <aside className="dist">
+            <h3>{t.depts.title}</h3>
+            <p className="dist-addr">{t.depts.lead}</p>
+            <ul className="dist-depts">
+              {t.depts.items.map((d) => (
+                <li key={d.name}><span>{d.name}</span><strong><a href={`tel:${d.phone.replace(/\s/g, '')}`}>{d.phone}</a></strong></li>
+              ))}
+            </ul>
+          </aside>
+          </div>
         </Container>
       </section>
     </>

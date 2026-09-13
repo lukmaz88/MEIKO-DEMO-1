@@ -423,3 +423,9 @@
 .locs-list .loc:last-of-type { border-bottom: 1px solid var(--line); }
 .locs-list .loc h3 { font-size: 19px; margin-bottom: 6px; }
 .locs-list .loc p { color: var(--ink-2); font-size: 16px; }
+
+.quote-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+.quote-grid .form { max-width: none; }
+.dist-depts { columns: 1 !important; }
+.dist-depts a { color: #fff; }
+@media (max-width: 900px) { .quote-grid { grid-template-columns: 1fr; } }
