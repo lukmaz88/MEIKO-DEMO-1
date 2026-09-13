@@ -378,3 +378,10 @@
 @keyframes faqin { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 .faq details[open] p { animation: faqin .35s var(--ease) both; }
 @media (prefers-reduced-motion: reduce) { .hdr, .hdr-in, .phero-img img, .faq details[open] p { animation: none; } }
+
+/* quote success: circle and tick draw themselves */
+.success .check { width: 64px; height: 64px; margin-bottom: 20px; fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.success .check circle { stroke-dasharray: 190; stroke-dashoffset: 190; animation: draw .8s var(--ease) forwards; }
+.success .check path { stroke-dasharray: 60; stroke-dashoffset: 60; animation: draw .5s .6s var(--ease) forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .success .check circle, .success .check path { animation: none; stroke-dashoffset: 0; } }

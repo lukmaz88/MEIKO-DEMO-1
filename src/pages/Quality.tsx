@@ -13,7 +13,7 @@ export function Quality() {
       <Reveal as="section" className="section">
         <Container>
           <div className="sec-head"><h2>{t.quality.outcomesTitle}</h2></div>
-          <div className="outs">
+          <div className="outs stagger">
             {t.quality.outcomes.map((o) => <div key={o.title}><h3>{o.title}</h3><p>{o.text}</p></div>)}
           </div>
         </Container>

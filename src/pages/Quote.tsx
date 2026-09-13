@@ -43,6 +43,7 @@ export function Quote() {
         <section className="section">
           <Container>
             <div className="success" role="status">
+              <svg className="check" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" /><path d="M18 33 L28 43 L46 23" /></svg>
               <h2>{t.quote.success.title}</h2>
               <p>{t.quote.success.text}</p>
               <Button to={href('home')} variant="ghost">{t.cta.back}</Button>

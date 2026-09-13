@@ -11,14 +11,14 @@ export function Service({ k }: { k: ServiceContent['key'] }) {
   return (
     <>
       <PageHero title={s.name} lead={s.lead} image={s.image} />
-      <section className="section">
+      <Reveal as="section" className="section">
         <Container>
           <ParamTable rows={s.params} />
-          <div className="benefits">
+          <div className="benefits stagger">
             {s.benefits.map((b) => <div key={b.title} className="card"><h3>{b.title}</h3><p>{b.text}</p></div>)}
           </div>
         </Container>
-      </section>
+      </Reveal>
       {k === 'svcWarehousing' && (
         <Reveal as="section" className="section" >
           <Container>

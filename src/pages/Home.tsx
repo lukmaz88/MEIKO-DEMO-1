@@ -13,7 +13,8 @@ const services = [
   { key: 'svcTransport', image: 'gen-transport.jpg', hash: '' },
   { key: 'svcWarehousing', image: 'still-forklift.jpg', hash: '#cross-docking' },
 ] as const;
-const audienceImages = ['still-bigbags.jpg', 'still-aisle.jpg', 'still-forklift.jpg'];
+const audienceImages = ['gen-manufacturing.jpg', 'still-bigbags.jpg', 'still-aerial.jpg'];
+const ROTATE_MS = 7000;
 /** Split a line into word spans with a staggered delay index. */
 const words = (line: string, offset: number) =>
   line.split(' ').map((w, i) => <span className="w" style={{ '--i': offset + i } as React.CSSProperties} key={w + i}>{w} </span>);
@@ -23,7 +24,15 @@ export function Home() {
   const c = homeCopy[useLang()];
   const t = useT();
   const href = useHref();
-  const [audience, setAudience] = useState(0);
+  const [audience, setAudienceRaw] = useState(0);
+  const [auto, setAuto] = useState(true);
+  const setAudience = (i: number) => { setAuto(false); setAudienceRaw(i); };
+  // tabs rotate on their own until the visitor picks one (storytelling: show all three profiles)
+  useEffect(() => {
+    if (!auto || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const id = setInterval(() => setAudienceRaw((a) => (a + 1) % 3), ROTATE_MS);
+    return () => clearInterval(id);
+  }, [auto]);
   const [video, setVideo] = useState(false);
   useEffect(() => {
     const ok = matchMedia('(min-width: 901px)').matches && matchMedia('(prefers-reduced-motion: no-preference)').matches;
@@ -82,9 +91,9 @@ export function Home() {
         </svg>
         <Container>
           <div className="home-section-head"><h2>{c.audienceTitle}</h2><p>{c.audienceLead}</p></div>
-          <div className="industry-select" role="tablist" aria-label={c.audienceLabel}>
+          <div className={`industry-select ${auto ? 'auto' : ''}`} role="tablist" aria-label={c.audienceLabel} style={{ '--rotate': `${ROTATE_MS}ms` } as React.CSSProperties}>
             {c.audiences.map((a, i) => (
-              <button key={a.name} role="tab" aria-selected={audience === i} aria-controls="industry-detail" onClick={() => setAudience(i)}>{a.name}</button>
+              <button key={a.name + audience} role="tab" aria-selected={audience === i} aria-controls="industry-detail" onClick={() => setAudience(i)}>{a.name}<i className="tab-progress" /></button>
             ))}
           </div>
           <div className="industry-detail" id="industry-detail" role="tabpanel" key={audience}>
