@@ -140,12 +140,13 @@
 @media (max-width: 560px) { .depts { grid-template-columns: 1fr; } }
 
 /* quote band */
-.band { background: var(--ink); color: #fff; }
-.band .container { display: grid; grid-template-columns: 7fr 5fr; gap: 40px; align-items: center; padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(64px, 8vw, 112px); }
+.band { position: relative; background: var(--ink); color: #fff; overflow: hidden; }
+.band-bg, .qpage-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.band-shade, .qpage-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 30, 52, .93) 0%, rgba(10, 30, 52, .78) 55%, rgba(10, 30, 52, .55) 100%); }
+.band .container { position: relative; display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 6vw, 110px); align-items: center; padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(64px, 8vw, 112px); }
 .band h2 { color: #fff; margin-bottom: 16px; }
-.band p { color: rgba(255, 255, 255, .78); font-size: 18px; }
-.band .cta { display: flex; justify-content: flex-end; }
-@media (max-width: 900px) { .band .container { grid-template-columns: 1fr; } .band .cta { justify-content: flex-start; } }
+.band-copy p { color: rgba(255, 255, 255, .78); font-size: 18px; max-width: 46ch; }
+@media (max-width: 1000px) { .band .container { grid-template-columns: 1fr; } }
 
 /* ---------- subpage hero ---------- */
 .phero { padding: clamp(72px, 8vw, 120px) 0 clamp(40px, 5vw, 64px); }
@@ -431,45 +432,43 @@
 @media (max-width: 900px) { .quote-grid { grid-template-columns: 1fr; } }
 
 /* ---------- quote page: editorial left, navy form card right ---------- */
-.qp { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 6vw, 110px); align-items: start; padding: clamp(56px, 7vw, 104px) 0 var(--sec); }
-.qp-copy h1 { font-size: clamp(38px, 3.6vw, 60px); margin-bottom: 24px; max-width: 16ch; }
-.qp-copy .lead { margin-bottom: 40px; }
+.qpage { position: relative; background: var(--ink); color: #fff; overflow: hidden; min-height: calc(100dvh - 72px); display: flex; align-items: center; }
+.qpage > .container { position: relative; width: 100%; }
+.qp { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 6vw, 110px); align-items: center; padding: clamp(56px, 7vw, 96px) 0; }
+.qp-copy h1 { color: #fff; font-size: clamp(38px, 3.6vw, 60px); margin-bottom: 24px; max-width: 16ch; }
+.qp-copy .lead { color: rgba(255, 255, 255, .8); margin-bottom: 40px; }
 .qp-after { max-width: 620px; }
-.qp-after li { display: grid; grid-template-columns: 52px 1px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-top: 1px solid var(--line); font: 500 18px/1.4 var(--font-b); }
-.qp-after li:last-child { border-bottom: 1px solid var(--line); }
-.qp-after li i { width: 52px; height: 52px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font: 600 18px/1 var(--font-h); font-style: normal; }
-.qp-after li em { display: block; width: 1px; height: 28px; background: var(--line); }
-.qcard { background: var(--ink); color: #fff; border-radius: 8px; padding: clamp(28px, 3vw, 48px); }
-.qcard h2 { color: #fff; font-size: clamp(28px, 2.4vw, 38px); margin-bottom: 10px; }
-.qcard > p { color: rgba(255, 255, 255, .72); font-size: 16px; margin-bottom: 28px; max-width: 48ch; }
-.qcard label, .qcard .lbl { display: block; font: 600 14px/1 var(--font-b); color: #fff; margin: 0 0 10px; }
-.qcard .row { margin-bottom: 22px; }
-.seg { display: grid; grid-template-columns: repeat(4, 1fr); background: #fff; border-radius: var(--r); overflow: hidden; }
-.seg button { display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border: 0; background: #fff; color: var(--ink); font: 600 15px/1 var(--font-b); cursor: pointer; border-left: 1px solid var(--line); transition: background .2s, color .2s; }
+.qp-after li { display: grid; grid-template-columns: 52px 1px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-top: 1px solid rgba(255, 255, 255, .18); font: 500 18px/1.4 var(--font-b); color: #fff; }
+.qp-after li:last-child { border-bottom: 1px solid rgba(255, 255, 255, .18); }
+.qp-after li i { width: 52px; height: 52px; border-radius: 50%; background: rgba(255, 255, 255, .12); color: #fff; display: grid; place-items: center; font: 600 18px/1 var(--font-h); font-style: normal; }
+.qp-after li em { display: block; width: 1px; height: 28px; background: rgba(255, 255, 255, .25); }
+.qcard { background: var(--surface); color: var(--ink); border-radius: 10px; padding: clamp(28px, 3vw, 44px); box-shadow: 0 30px 80px rgba(6, 20, 40, .35); }
+.qcard h2 { color: var(--ink); font-size: clamp(26px, 2.2vw, 34px); margin-bottom: 8px; }
+.qcard > p { color: var(--ink-2); font-size: 15px; margin-bottom: 24px; max-width: 48ch; }
+.qcard label, .qcard .lbl { display: block; font: 600 13px/1 var(--font-b); color: var(--ink-2); margin: 0 0 10px; }
+.qcard .row { margin-bottom: 18px; }
+.seg { display: grid; grid-template-columns: repeat(4, 1fr); background: #fff; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.seg button { display: flex; align-items: center; justify-content: center; gap: 10px; height: 52px; border: 0; background: #fff; color: var(--ink); font: 600 15px/1 var(--font-b); cursor: pointer; border-left: 1px solid var(--line); transition: background .2s, color .2s; }
 .seg button:first-child { border-left: 0; }
 .seg button img { width: 24px; height: 24px; }
 .seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
 .seg button[aria-pressed="true"] img { filter: brightness(0) invert(1); }
 .seg button:hover:not([aria-pressed="true"]) { background: var(--accent-soft); }
-.qcard input { width: 100%; height: 56px; border: 0; border-radius: var(--r); background: #fff; color: var(--ink); padding: 0 16px; font-size: 16px; }
+.qcard input { width: 100%; height: 52px; border: 1px solid var(--line); border-radius: var(--r); background: #fff; color: var(--ink); padding: 0 16px; font-size: 16px; transition: border-color .2s; }
 .qcard input::placeholder { color: var(--ink-3); }
-.qcard input:focus { outline: 3px solid rgba(22, 86, 163, .6); outline-offset: 0; }
-.qcard input[aria-invalid="true"] { outline: 3px solid var(--red); }
+.qcard input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(22, 86, 163, .18); }
+.qcard input[aria-invalid="true"] { border-color: var(--red); }
 .qroute { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .qroute .pin { position: relative; }
 .qroute .pin img { position: absolute; left: 16px; top: 50%; width: 22px; height: 22px; transform: translateY(-50%); pointer-events: none; }
 .qroute .pin input { padding-left: 50px; }
 .qroute .pin small { position: absolute; left: 50px; top: 10px; font: 600 12px/1 var(--font-b); color: var(--ink-3); pointer-events: none; }
-.qroute .pin input { padding-top: 16px; height: 64px; }
-.qcard .btn-primary { width: 100%; height: 56px; font-size: 16px; margin-top: 4px; }
+.qroute .pin input { padding-top: 16px; height: 62px; }
+.qcard .btn-primary { width: 100%; height: 54px; font-size: 16px; margin-top: 4px; }
 .qcard .btn-primary::after { content: " →"; }
-.qnote { display: flex; align-items: center; gap: 10px; color: rgba(255, 255, 255, .72); font-size: 14px; margin-top: 18px; }
+.qnote { display: flex; align-items: center; gap: 10px; color: var(--ink-3); font-size: 14px; margin-top: 16px; }
 .qnote svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.6; }
-.qcard .qf-err { color: #ffb4b4; margin-top: 12px; }
+.qcard .qf-err { color: var(--red); margin-top: 12px; }
 .qcard .success { background: transparent; border: 0; padding: 8px 0 0; }
-.qcard .success h2 { color: #fff; }
-.qcard .success p { color: rgba(255, 255, 255, .78); }
-.qcard .success .check { stroke: #fff; }
-.qcard .success .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .5); }
 @media (max-width: 1000px) { .qp { grid-template-columns: 1fr; } .qp-copy h1 { max-width: none; } }
 @media (max-width: 600px) { .seg { grid-template-columns: 1fr 1fr; } .seg button { border-top: 1px solid var(--line); } .seg button:nth-child(-n+2) { border-top: 0; } .seg button:nth-child(3) { border-left: 0; } .qroute { grid-template-columns: 1fr; } }

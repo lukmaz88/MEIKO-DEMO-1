@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { useHref, useLang, useT } from '../i18n/LangContext';
 import { homeCopy } from '../content/home';
 import '../styles/home.css';
+import { QuoteCard } from './QuoteCard';
 import { facts } from '../data/facts';
 import type { Faq as FaqT, Param } from '../content/types';
 import { Approved, Button, Container, CountUp, ImgReveal, Kanji, Marquee, Placeholder, Reveal, Stat } from './ui';
@@ -224,17 +225,16 @@ export function DeptContacts({ only, heading = true }: { only?: string[]; headin
 /* ---------------- Quote band ---------------- */
 export function QuoteBlock({ service }: { service?: string }) {
   const t = useT();
-  const href = useHref();
   return (
     <section className="band">
+      <img className="band-bg" src="/media/quote-bg.jpg" alt="" loading="lazy" />
+      <div className="band-shade" />
       <Container>
-        <div>
+        <div className="band-copy">
           <h2>{t.quoteBand.title}</h2>
           <p>{t.quoteBand.lead}</p>
         </div>
-        <div className="cta">
-          <Button to={href('quote', service ? `?service=${service}` : '')} variant="light">{t.cta.quote}</Button>
-        </div>
+        <QuoteCard initialService={service} />
       </Container>
     </section>
   );
