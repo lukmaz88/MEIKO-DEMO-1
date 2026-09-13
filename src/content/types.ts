@@ -59,9 +59,9 @@ export type Content = {
       title: string; lead: string; after: [string, string, string];
       cardTitle: string; cardLead: string;
       service: string; services: { slug: string; name: string; icon: string }[];
-      cargo: string; cargoPh: string;
-      route: string; from: string; fromPh: string; to: string; toPh: string;
+      who: string; whoPh: string;
       reach: string; reachPh: string;
+      desc: string; descPh: string;
     };
   };
   about: {

@@ -18,32 +18,28 @@ const mount = (url: string) =>
   );
 
 const type = (id: string, value: string) => fireEvent.change(document.getElementById(id)!, { target: { value } });
-const pressed = () => screen.getAllByRole('button', { pressed: true }).map((b) => b.textContent);
 
 describe('quote card', () => {
-  it('preselects the service from the query, first one otherwise', () => {
-    mount('/pl/zapytanie-ofertowe?service=magazynowanie');
-    expect(pressed()).toEqual(['Magazyn']);
+  it('mentions the service when opened from a service page', () => {
+    mount('/pl/zapytanie-ofertowe?service=spedycja');
+    expect(screen.getByText(/Usługa: Spedycja/)).toBeTruthy();
     cleanup();
     mount('/pl/zapytanie-ofertowe');
-    expect(pressed()).toEqual(['Transport']);
+    expect(screen.queryByText(/Usługa:/)).toBeNull();
   });
 
-  it('switches service on click', () => {
+  it('requires all three fields', () => {
     mount('/pl/zapytanie-ofertowe');
-    fireEvent.click(screen.getByRole('button', { name: /Cło/ }));
-    expect(pressed()).toEqual(['Cło']);
-  });
-
-  it('requires cargo and contact', () => {
-    mount('/pl/zapytanie-ofertowe');
+    type('who', 'Anna Kowal');
+    type('reach', 'anna@firma.pl');
     fireEvent.click(screen.getByRole('button', { name: pl.quote.submit }));
     expect(screen.getByRole('alert').textContent).toBe(pl.quote.errors.required);
   });
 
-  it('rejects a bad contact, accepts a phone, shows success', () => {
+  it('validates the contact and shows success', () => {
     mount('/pl/zapytanie-ofertowe');
-    type('cargo', '12 palet');
+    type('who', 'Anna Kowal');
+    type('desc', '12 palet komponentów');
     type('reach', 'xx');
     fireEvent.click(screen.getByRole('button', { name: pl.quote.submit }));
     expect(screen.getByRole('alert').textContent).toBe(pl.quote.errors.email);
