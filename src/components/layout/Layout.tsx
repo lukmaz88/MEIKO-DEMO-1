@@ -16,8 +16,9 @@ export function usePageTitle(title?: string) {
 function LangSwitch() {
   const { pathname, search } = useLocation();
   const lang = useLang();
+  const t = useT();
   return (
-    <Link to={twinPath(pathname, search)} className="lang" aria-label="Language">
+    <Link to={twinPath(pathname, search)} className="lang" aria-label={t.ui.language}>
       <span className={lang === 'pl' ? 'on' : ''}>PL</span>
       <span className={lang === 'en' ? 'on' : ''}>EN</span>
     </Link>
@@ -41,7 +42,7 @@ function Header() {
         <Link to={href('home')} className="logo" aria-label={t.meta.siteName}>
           <Logo />
         </Link>
-        <nav className={`nav ${open ? 'open' : ''}`} aria-label="Main">
+        <nav className={`nav ${open ? 'open' : ''}`} aria-label={t.ui.mainNav}>
           {t.nav.map((n) => (
             <NavLink key={n.key} to={href(n.key)} end={n.key === 'home'} className={({ isActive }) => (isActive ? 'on' : '')}>
               {n.label}
@@ -52,7 +53,7 @@ function Header() {
             <Button to={href('quote')}>{t.cta.quote}</Button>
           </div>
         </nav>
-        <button className={`burger ${open ? 'x' : ''}`} onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-label="Menu">
+        <button className={`burger ${open ? 'x' : ''}`} onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-label={t.ui.menu}>
           <span /><span />
         </button>
       </Container>
@@ -112,6 +113,7 @@ function ScrollToTop() {
 
 export function Layout() {
   const { lang } = useParams();
+  useEffect(() => { if (isLang(lang)) document.documentElement.lang = lang; }, [lang]);
   if (!isLang(lang)) return <Navigate to="/pl" replace />;
   return (
     <LangProvider lang={lang}>

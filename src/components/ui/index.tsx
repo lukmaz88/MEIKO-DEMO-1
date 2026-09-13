@@ -178,6 +178,7 @@ export function Intro() {
 
 /** Full-screen image preview. Closes on Escape, backdrop click or the close button. */
 export function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  const t = useT();
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -187,7 +188,7 @@ export function Lightbox({ src, alt, onClose }: { src: string; alt: string; onCl
   }, [onClose]);
   return createPortal(
     <div className="lightbox" role="dialog" aria-modal="true" aria-label={alt} onClick={onClose}>
-      <button type="button" className="lightbox-close" aria-label="Zamknij" onClick={onClose}>×</button>
+      <button type="button" className="lightbox-close" aria-label={t.ui.close} onClick={onClose}>×</button>
       <img src={src} alt={alt} onClick={(e) => e.stopPropagation()} />
     </div>,
     document.body,
