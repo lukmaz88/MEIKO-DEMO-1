@@ -32,7 +32,6 @@ export function Home() {
     const ok = matchMedia('(min-width: 901px)').matches && matchMedia('(prefers-reduced-motion: no-preference)').matches;
     if (ok) setVideo(true);
   }, []);
-  const selected = c.audiences[audience];
 
   return (
     <div className="home-page">
@@ -64,30 +63,28 @@ export function Home() {
       </Reveal>
 
       <Reveal as="section" className="home-industries home-section">
-        <svg className="route" viewBox="0 0 1600 600" preserveAspectRatio="none" aria-hidden="true">
-          <path className="route-path" d="M-20 470 C 200 420, 320 300, 520 330 S 860 480, 1060 300 S 1380 120, 1640 180" />
-          <g className="route-nodes">
-            <circle cx="520" cy="330" r="4" /><circle cx="1060" cy="300" r="4" /><circle cx="1380" cy="150" r="4" />
-          </g>
-          <circle className="route-dot" r="6">
-            <animateMotion dur="16s" repeatCount="indefinite" path="M-20 470 C 200 420, 320 300, 520 330 S 860 480, 1060 300 S 1380 120, 1640 180" />
-          </circle>
-        </svg>
         <Container>
           <div className="home-section-head"><h2>{c.audienceTitle}</h2><p>{c.audienceLead}</p></div>
-          <div className={`industry-select ${auto ? 'auto' : ''}`} role="tablist" aria-label={c.audienceLabel} style={{ '--rotate': `${ROTATE_MS}ms` } as React.CSSProperties}>
-            {c.audiences.map((a, i) => (
-              <button key={a.name + audience} role="tab" aria-selected={audience === i} aria-controls="industry-detail" onClick={() => setAudience(i)}>{a.name}<i className="tab-progress" /></button>
-            ))}
-          </div>
-          <div className="industry-detail" id="industry-detail" role="tabpanel" key={audience}>
-            <div className="industry-copy" aria-live="polite">
-              <h3>{selected.title}</h3>
-              <p>{selected.text}</p>
-              <ul>{selected.points.map((point) => <li key={point}>{point}</li>)}</ul>
-              <Link to={href('quote')}>{c.solution}</Link>
-            </div>
-            <img src={`/media/${audienceImages[audience]}`} alt="" loading="lazy" />
+          <div className={`ind-panels ${auto ? 'auto' : ''}`} role="tablist" aria-label={c.audienceLabel} style={{ '--rotate': `${ROTATE_MS}ms` } as React.CSSProperties}>
+            {c.audiences.map((a, i) => {
+              const on = audience === i;
+              return (
+                <div key={a.name} className={`ind-panel ${on ? 'on' : ''}`} role="tab" tabIndex={0} aria-selected={on}
+                  onClick={() => setAudience(i)} onMouseEnter={() => setAudience(i)}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setAudience(i); } }}>
+                  <img src={`/media/${audienceImages[i]}`} alt="" loading="lazy" />
+                  <div className="ind-shade" />
+                  <span className="ind-name">{a.name}</span>
+                  <div className="ind-copy" aria-hidden={!on}>
+                    <h3>{a.title}</h3>
+                    <p>{a.text}</p>
+                    <ul>{a.points.map((point) => <li key={point}>{point}</li>)}</ul>
+                    <Link to={href('quote')} tabIndex={on ? 0 : -1} onClick={(e) => e.stopPropagation()}>{c.solution}</Link>
+                  </div>
+                  {on && auto && <i className="ind-progress" />}
+                </div>
+              );
+            })}
           </div>
         </Container>
       </Reveal>
