@@ -127,8 +127,8 @@ export function Layout() {
   const start = (to: string, target: Lang) => {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) { navigate(to, { state: { langSwitch: true } }); return; }
     setVeil(target);
-    setTimeout(() => navigate(to, { state: { langSwitch: true } }), 560);
-    setTimeout(() => setVeil(null), 1350);
+    setTimeout(() => navigate(to, { state: { langSwitch: true } }), 780);
+    setTimeout(() => setVeil(null), 1900);
   };
   if (!isLang(lang)) return <Navigate to="/pl" replace />;
   const switched = !!(state as { langSwitch?: boolean } | null)?.langSwitch;
@@ -138,7 +138,7 @@ export function Layout() {
         <Intro />
         {veil && (
           <div className="lang-veil" aria-hidden="true">
-            {[0, 1, 2, 3, 4, 5].map((i) => <i key={i} className="bar" style={{ '--i': i } as React.CSSProperties} />)}
+            {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => <i key={i} className="bar" style={{ '--i': i } as React.CSSProperties} />)}
             <div className="flag">
               {veil === 'pl' ? (
                 <svg viewBox="0 0 16 10"><rect width="16" height="5" fill="#fff" /><rect y="5" width="16" height="5" fill="#DC143C" /></svg>
