@@ -32,7 +32,7 @@ export type Content = {
   meta: { siteName: string; titleSuffix: string; description: string };
   nav: { label: string; key: RouteKey }[];
   cta: { quote: string; services: string; more: string; allServices: string; back: string; details: string };
-  hero: { eyebrow: string; h1: string; sub: string };
+  hero: { h1: string; sub: string };
   proof: { label: string; factKey: FactKey }[];
   services: {
     title: string; lead: string;

@@ -42,10 +42,6 @@ export function Button({ to, href, variant = 'primary', children, className = ''
   return <a href={href} className={cls}>{children}</a>;
 }
 
-export function Eyebrow({ children }: { children: ReactNode }) {
-  return <span className="eyebrow">{children}</span>;
-}
-
 export function Stat({ label, factKey }: { label: string; factKey: FactKey }) {
   return (
     <div className="stat">

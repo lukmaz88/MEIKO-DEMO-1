@@ -15,7 +15,6 @@ export const en: Content = {
   ],
   cta: { quote: 'Request a quotation', services: 'See services', more: 'More', allServices: 'All services', back: 'Back to home', details: 'Details' },
   hero: {
-    eyebrow: 'Meiko Trans Polska · part of Meiko Group since 1949',
     h1: 'Your complete logistics partner.',
     sub: 'Freight forwarding, transport, warehousing and customs in one place. Gliwice, Dąbrowa Górnicza, worldwide.',
   },

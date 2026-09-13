@@ -15,7 +15,6 @@ export const pl: Content = {
   ],
   cta: { quote: 'Zapytaj o ofertę', services: 'Zobacz usługi', more: 'Więcej', allServices: 'Wszystkie usługi', back: 'Wróć na stronę główną', details: 'Szczegóły' },
   hero: {
-    eyebrow: 'Meiko Trans Polska · w grupie Meiko od 1949',
     h1: 'Kompletny partner logistyczny.',
     sub: 'Spedycja, transport, magazynowanie i cło w jednym miejscu. Gliwice, Dąbrowa Górnicza, świat.',
   },

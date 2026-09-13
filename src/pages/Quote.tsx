@@ -21,9 +21,9 @@ export function Quote() {
           <div className="qp-copy">
             <h1>{f.title}</h1>
             <p className="lead">{f.lead}</p>
-            <ol className="qp-after">
-              {f.after.map((a, i) => <li key={a}><i>{i + 1}</i><em /><span>{a}</span></li>)}
-            </ol>
+            <ul className="qp-after">
+              {f.after.map((a) => <li key={a}>{a}</li>)}
+            </ul>
           </div>
           <QuoteCard initialService={pre} />
         </div>
