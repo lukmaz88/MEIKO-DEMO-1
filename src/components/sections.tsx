@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { useHref, useT } from '../i18n/LangContext';
+import { useHref, useLang, useT } from '../i18n/LangContext';
+import { homeCopy } from '../content/home';
+import '../styles/home.css';
 import { facts } from '../data/facts';
 import type { Faq as FaqT, Param } from '../content/types';
 import { Approved, Button, Container, CountUp, ImgReveal, Kanji, Marquee, Placeholder, Reveal, Stat } from './ui';
@@ -47,46 +49,31 @@ export function ProofStrip() {
   );
 }
 
-/* ---------------- Services bento ---------------- */
-const ICON: Record<string, string> = { svcForwarding: 'globe', svcWarehousing: 'warehouse', svcTransport: 'truck', 'svcWarehousing#cross-docking': 'crossdock' };
+/* ---------------- Service cards (home + services overview) ---------------- */
+const SERVICE_CARDS = [
+  { key: 'svcForwarding', image: 'gen-forwarding.jpg', hash: '' },
+  { key: 'svcWarehousing', image: 'still-aisle.jpg', hash: '' },
+  { key: 'svcTransport', image: 'gen-transport.jpg', hash: '' },
+  { key: 'svcWarehousing', image: 'still-forklift.jpg', hash: '#cross-docking' },
+] as const;
 
-export function ServiceGrid({ compact = false }: { compact?: boolean }) {
+export function ServiceCards() {
+  const c = homeCopy[useLang()];
   const t = useT();
   const href = useHref();
   return (
-    <Reveal as="section" className="section">
-      <Container>
-        {!compact && (
-          <div className="sec-head">
-            <h2>{t.services.title}</h2>
-            <p className="lead">{t.services.lead}</p>
+    <div className="home-services stagger">
+      {c.services.map((service, i) => (
+        <Link className="home-service" to={href(SERVICE_CARDS[i].key) + SERVICE_CARDS[i].hash} key={service.title}>
+          <ImgReveal src={`/media/${SERVICE_CARDS[i].image}`} className="home-service-photo" />
+          <div className="home-service-copy">
+            <h3>{service.title}</h3>
+            <p>{service.text}</p>
+            <span className="home-service-link">{t.cta.details}</span>
           </div>
-        )}
-        <div className="svc-grid stagger">
-          {t.services.homeTiles.map((s, i) => {
-            const svc = t.services.key.find((k) => k.key === s.key)!;
-            const to = href(s.key) + (s.hash ?? '');
-            const icon = ICON[s.key + (s.hash ?? '')];
-            return (
-              <Link key={s.name} to={to} className="card">
-                {i === 0 && <ImgReveal src={svc.image} className="svc-img" />}
-                <div className={i === 0 ? 'card-body' : undefined} style={i === 0 ? undefined : { display: 'contents' }}>
-                  <span className="svc-icon" aria-hidden="true"><img src={`/media/icons/${icon}.png`} alt="" width={28} height={28} /></span>
-                  <h3>{s.name}</h3>
-                  <p>{s.short}</p>
-                  <span className="more">{t.cta.more}</span>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-        {!compact && (
-          <div className="svc-foot">
-            <Button to={href('services')} variant="ghost">{t.cta.allServices}</Button>
-          </div>
-        )}
-      </Container>
-    </Reveal>
+        </Link>
+      ))}
+    </div>
   );
 }
 

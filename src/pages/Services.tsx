@@ -1,5 +1,5 @@
 import { usePageTitle } from '../components/layout/Layout';
-import { QuoteBlock, ServiceGrid } from '../components/sections';
+import { QuoteBlock, ServiceCards } from '../components/sections';
 import { Container, PageHero, Reveal } from '../components/ui';
 import { useT } from '../i18n/LangContext';
 
@@ -9,7 +9,7 @@ export function Services() {
   return (
     <>
       <PageHero title={t.services.title} lead={t.services.lead} />
-      <ServiceGrid compact />
+      <Reveal as="section" className="home-section"><Container><ServiceCards /></Container></Reveal>
       <Reveal as="section" className="section">
         <Container>
           <div className="sec-head"><h2>{t.services.secondRowTitle}</h2></div>

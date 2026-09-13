@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { usePageTitle } from '../components/layout/Layout';
-import { Certs, DeptContacts, NetworkMarquee, ProofStrip } from '../components/sections';
+import { Certs, DeptContacts, NetworkMarquee, ProofStrip, ServiceCards } from '../components/sections';
 import { Button, Container, ImgReveal, Reveal } from '../components/ui';
 import { homeCopy } from '../content/home';
 import { useHref, useLang, useT } from '../i18n/LangContext';
 import '../styles/home.css';
 
-const services = [
-  { key: 'svcForwarding', image: 'gen-forwarding.jpg', hash: '' },
-  { key: 'svcWarehousing', image: 'still-aisle.jpg', hash: '' },
-  { key: 'svcTransport', image: 'gen-transport.jpg', hash: '' },
-  { key: 'svcWarehousing', image: 'still-forklift.jpg', hash: '#cross-docking' },
-] as const;
 const audienceImages = ['gen-manufacturing.jpg', 'still-bigbags.jpg', 'still-aerial.jpg'];
 const ROTATE_MS = 7000;
 /** Split a line into word spans with a staggered delay index. */
@@ -64,18 +58,7 @@ export function Home() {
         <Container>
           <div id="uslugi" style={{ scrollMarginTop: 96 }} />
           <div className="home-section-head"><h2>{c.servicesTitle}</h2><p>{c.servicesLead}</p></div>
-          <div className="home-services stagger">
-            {c.services.map((service, i) => (
-              <Link className="home-service" to={href(services[i].key) + services[i].hash} key={service.title}>
-                <ImgReveal src={`/media/${services[i].image}`} className="home-service-photo" />
-                <div className="home-service-copy">
-                  <h3>{service.title}</h3>
-                  <p>{service.text}</p>
-                  <span className="home-service-link">{t.cta.details}</span>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <ServiceCards />
         </Container>
       </Reveal>
 
