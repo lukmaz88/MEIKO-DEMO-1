@@ -197,12 +197,12 @@ export const pl: Content = {
     ],
   },
   quoteBand: {
-    title: 'Opisz, co i skąd wysyłasz. Resztę policzymy.',
-    lead: 'Trzy pola. Odpowiemy jak najszybciej.',
+    title: 'Kilka słów o ładunku wystarczy. Wycenę przygotujemy my.',
+    lead: 'Wystarczą trzy pola. Odpowiemy jak najszybciej.',
   },
   quote: {
     title: 'Zapytanie ofertowe',
-    lead: 'Trzy pola. Odpowiemy jak najszybciej.',
+    lead: 'Wystarczą trzy pola. Odpowiemy jak najszybciej.',
     reply: 'Odpowiemy jak najszybciej.',
     fields: { contact: 'Osoba kontaktowa', email: 'Adres e-mail', service: 'Usługa', company: 'Nazwa firmy', phone: 'Telefon', cargo: 'Rodzaj ładunku' },
     servicePlaceholder: 'Wybierz usługę',
@@ -210,11 +210,11 @@ export const pl: Content = {
     success: { title: 'Dziękujemy. Zapytanie dotarło.', text: 'Opiekun zlecenia odezwie się jak najszybciej na podany adres e-mail lub telefon.' },
     errors: { required: 'To pole jest wymagane.', email: 'Podaj poprawny adres e-mail.' },
     flow: {
-      title: 'Powiedz nam, czego potrzebujesz. Resztą zajmiemy się my.',
-      lead: 'Trzy pola. Opiekun zlecenia odezwie się jak najszybciej.',
-      after: ['Piszesz kilka słów o ładunku', 'Analizujemy trasę i wymagania', 'Odpowiadamy jak najszybciej z wyceną'],
-      cardTitle: 'Poproś o wycenę',
-      cardLead: 'Wystarczy kilka słów, resztę ustalimy w rozmowie.',
+      title: 'Chętnie poznamy Twoje potrzeby. Resztą zajmiemy się my.',
+      lead: 'Wystarczą trzy pola. Opiekun zlecenia odezwie się do Ciebie jak najszybciej.',
+      after: ['Zostawiasz nam kilka słów o ładunku', 'Analizujemy trasę i wymagania', 'Wracamy do Ciebie z wyceną jak najszybciej'],
+      cardTitle: 'Zapytanie o wycenę',
+      cardLead: 'Wystarczy kilka słów, resztę chętnie ustalimy wspólnie.',
       service: 'Usługa',
       services: [
         { slug: 'transport', name: 'Transport', icon: 'truck' },
@@ -224,7 +224,7 @@ export const pl: Content = {
       ],
       who: 'Imię i nazwisko', whoPh: 'np. Anna Kowal',
       reach: 'E-mail lub telefon', reachPh: 'np. anna@firma.pl lub +48 600 000 000',
-      desc: 'Czego dotyczy zapytanie', descPh: 'np. 12 palet komponentów z Gliwic do Brna, raz w tygodniu',
+      desc: 'W czym możemy pomóc', descPh: 'np. 12 palet komponentów z Gliwic do Brna, raz w tygodniu',
     },
   },
   about: {

@@ -197,12 +197,12 @@ export const en: Content = {
     ],
   },
   quoteBand: {
-    title: 'Tell us what you ship and from where. We do the maths.',
-    lead: 'Three fields. We reply as soon as possible.',
+    title: 'A few words about your cargo are enough. We prepare the quote.',
+    lead: 'Three fields are enough. We reply as soon as possible.',
   },
   quote: {
     title: 'Request a quotation',
-    lead: 'Three fields. We reply as soon as possible.',
+    lead: 'Three fields are enough. We reply as soon as possible.',
     reply: 'We reply as soon as possible.',
     fields: { contact: 'Contact person', email: 'Email address', service: 'Requested service', company: 'Company name', phone: 'Telephone', cargo: 'Cargo type' },
     servicePlaceholder: 'Choose a service',
@@ -210,11 +210,11 @@ export const en: Content = {
     success: { title: 'Thank you. Your request has arrived.', text: 'Your order owner will get back to you as soon as possible by email or phone.' },
     errors: { required: 'This field is required.', email: 'Enter a valid email address.' },
     flow: {
-      title: 'Tell us what you need. We take care of the rest.',
-      lead: 'Three fields. Your order owner gets back to you as soon as possible.',
-      after: ['You write a few words about the cargo', 'We analyse the route and requirements', 'We reply as soon as possible with a quote'],
-      cardTitle: 'Request a quote',
-      cardLead: 'A few words are enough, we settle the rest in a call.',
+      title: 'We would love to hear what you need. We take care of the rest.',
+      lead: 'Three fields are enough. Your order owner will get back to you as soon as possible.',
+      after: ['You leave us a few words about the cargo', 'We analyse the route and requirements', 'We get back to you with a quote as soon as possible'],
+      cardTitle: 'Quotation request',
+      cardLead: 'A few words are enough, we will gladly settle the rest together.',
       service: 'Service',
       services: [
         { slug: 'transport', name: 'Transport', icon: 'truck' },
@@ -224,7 +224,7 @@ export const en: Content = {
       ],
       who: 'Full name', whoPh: 'e.g. Anna Kowal',
       reach: 'Email or phone', reachPh: 'e.g. anna@company.com or +48 600 000 000',
-      desc: 'What is it about', descPh: 'e.g. 12 pallets of components from Gliwice to Brno, once a week',
+      desc: 'How can we help', descPh: 'e.g. 12 pallets of components from Gliwice to Brno, once a week',
     },
   },
   about: {
