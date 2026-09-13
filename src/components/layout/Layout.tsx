@@ -76,7 +76,6 @@ function Footer() {
             <h4>{t.footer.pagesTitle}</h4>
             <ul>
               {t.nav.map((n) => <li key={n.key}><Link to={href(n.key)}>{n.label}</Link></li>)}
-              <li><Link to={href('quality')}>{t.quality.title}</Link></li>
               <li><Link to={href('quote')}>{t.quote.title}</Link></li>
             </ul>
           </div>

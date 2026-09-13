@@ -10,6 +10,7 @@ export const en: Content = {
     { label: 'Services', key: 'services' },
     { label: 'About', key: 'about' },
     { label: 'Warehouses', key: 'svcWarehousing' },
+    { label: 'Certificates', key: 'quality' },
     { label: 'Contact', key: 'contact' },
   ],
   cta: { quote: 'Request a quotation', services: 'See services', more: 'More', allServices: 'All services', back: 'Back to home', details: 'Details' },

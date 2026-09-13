@@ -10,6 +10,7 @@ export const pl: Content = {
     { label: 'Usługi', key: 'services' },
     { label: 'O firmie', key: 'about' },
     { label: 'Magazyny', key: 'svcWarehousing' },
+    { label: 'Certyfikaty', key: 'quality' },
     { label: 'Kontakt', key: 'contact' },
   ],
   cta: { quote: 'Zapytaj o ofertę', services: 'Zobacz usługi', more: 'Więcej', allServices: 'Wszystkie usługi', back: 'Wróć na stronę główną', details: 'Szczegóły' },
