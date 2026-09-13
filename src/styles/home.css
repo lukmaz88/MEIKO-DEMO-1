@@ -165,7 +165,7 @@
 }
 
 /* hero headline: words rise one after another */
-.home-hero h1 .w { display: inline-block; opacity: 0; transform: translateY(.6em) rotate(2deg); animation: wordrise .9s var(--ease) forwards; animation-delay: calc(.15s + var(--i) * 70ms); transform-origin: left bottom; }
+.home-hero h1 .w { display: inline-block; white-space: pre; opacity: 0; transform: translateY(.6em) rotate(2deg); animation: wordrise .9s var(--ease) forwards; animation-delay: calc(.15s + var(--i) * 70ms); transform-origin: left bottom; }
 @keyframes wordrise { to { opacity: 1; transform: none; } }
 .home-hero .enter > h1 { opacity: 1; animation: none; }
 /* section headlines wipe in from a mask once the section is in view */
