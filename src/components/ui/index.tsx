@@ -90,11 +90,6 @@ export function Placeholder({ label, className = '' }: { label: string; classNam
   return <div className={`ph ${className}`}><span>{label}</span></div>;
 }
 
-export function Logo() {
-  return (
-    <span className="brand">
-      <img src="/media/mark.png" alt="" width={34} height={32} />
-      <span className="brand-name">MEIKO TRANS</span>
-    </span>
-  );
+export function Logo({ light = false }: { light?: boolean }) {
+  return <img className="brand" src={light ? '/media/logo-light.png' : '/media/logo.png'} alt="Meiko Trans Polska" width={2047} height={339} />;
 }

@@ -1,9 +1,8 @@
 /* ---------- header ---------- */
 .hdr { position: sticky; top: 0; z-index: 50; background: rgba(247, 248, 250, .88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
 .hdr-in { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 32px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; }
-.brand img { height: 32px; width: auto; }
-.brand-name { font: 800 17px/1 var(--font-h); letter-spacing: .04em; color: var(--ink); }
+.brand { width: 270px; max-width: 100%; height: auto; display: block; }
+@media (max-width: 400px) { .brand { width: 200px; } }
 .nav { display: flex; align-items: center; gap: 32px; }
 .nav > a { font: 500 15px/1 var(--font-b); padding: 8px 0; position: relative; color: var(--ink-2); transition: color .2s; }
 .nav > a:hover, .nav > a.on { color: var(--ink); }
@@ -267,7 +266,7 @@
 /* ---------- footer ---------- */
 .ftr { border-top: 1px solid var(--line); padding: 72px 0 32px; background: var(--surface); }
 .ftr-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
-.ftr-brand .brand { margin-bottom: 20px; }
+.ftr-brand .brand { margin-bottom: 20px; width: 280px; }
 .ftr-brand p { font-size: 15px; color: var(--ink-2); }
 .ftr h4 { font: 600 13px/1 var(--font-b); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 18px; }
 .ftr li { padding: 5px 0; font-size: 15px; color: var(--ink-2); }
