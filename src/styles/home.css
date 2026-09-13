@@ -10,16 +10,16 @@
 .home-section-head { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: end; margin-bottom: 40px; }
 .home-section-head > h2 + p { align-self: end; }
 .home-section-head > p, .home-section-head > div > p { color: var(--ink-2); font-size: 17px; line-height: 1.75; max-width: 49ch; }
-.home-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 86dvh; display: flex; align-items: flex-end; background: var(--home-navy); color: white; }
+.home-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 78dvh; display: flex; align-items: flex-end; background: var(--home-navy); color: white; }
 .home-hero .home-hero-media { animation: kenburns 28s ease-out both; }
 .home-hero-media, .home-hero-shade { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; z-index: -1; }
 .home-hero-shade { background: linear-gradient(90deg, rgba(6,28,46,.92), rgba(6,28,46,.68) 56%, rgba(6,28,46,.23)), linear-gradient(0deg, rgba(6,28,46,.5), transparent 50%); }
 .home-hero > .container { width: 100%; }
-.home-hero-copy { padding: 120px 0 96px; max-width: 880px; }
+.home-hero-copy { padding: 110px 0 88px; max-width: 1000px; }
 .home-hero .eyebrow { color: #d9e8f4; margin-bottom: 26px; }
-.home-hero h1 { font-size: clamp(40px, 5.2vw, 72px); font-weight: 600; letter-spacing: -.05em; line-height: 1.08; text-wrap: initial; max-width: 19ch; }
+.home-hero h1 { font-size: clamp(38px, 4.4vw, 64px); font-weight: 600; letter-spacing: -.04em; line-height: 1.1; text-wrap: initial; max-width: 30ch; }
 .home-hero h1 span { display: block; color: #a9d0f4; }
-.home-hero-copy > p { max-width: 52ch; margin: 28px 0 32px; color: #e1e8ee; font-size: 18px; line-height: 1.7; }
+.home-hero-copy > p { max-width: 58ch; margin: 24px 0 32px; color: #e1e8ee; font-size: 18px; line-height: 1.65; }
 #uslugi { scroll-margin-top: 85px; }
 .home-services { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .home-service { display: grid; grid-template-columns: 35% 1fr; background: white; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; transition: border-color .2s, box-shadow .2s; }
@@ -149,9 +149,9 @@
   .home-section { padding: 128px 0; }
   .home-section-head { margin-bottom: 56px; }
   .home-section-head > p, .home-section-head > div > p { font-size: 20px; max-width: 52ch; }
-  .home-hero-copy { padding: 160px 0 120px; max-width: 1040px; }
-  .home-hero h1 { font-size: clamp(64px, 4.6vw, 92px); max-width: 24ch; }
-  .home-hero-copy > p { font-size: 22px; max-width: 54ch; }
+  .home-hero-copy { padding: 140px 0 110px; max-width: 1200px; }
+  .home-hero h1 { font-size: clamp(60px, 3.6vw, 76px); max-width: 30ch; }
+  .home-hero-copy > p { font-size: 21px; max-width: 60ch; }
   .home-services { gap: 28px; }
   .home-service-photo { min-height: 360px; }
   .home-service-copy { padding: 40px; }

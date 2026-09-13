@@ -27,7 +27,7 @@ export function About() {
         <Container>
           <div className="sec-head"><h2>{a.timelineTitle}</h2></div>
           <div className="tl stagger">
-            {a.timeline.map((e) => <div key={e.era}><span className="era">{e.era}</span><h3>{e.title}</h3><p>{e.text}</p></div>)}
+            {a.timeline.map((e) => <div key={e.era}><h3>{e.title}</h3><p className="muted" style={{ marginBottom: 8 }}>{e.era}</p><p>{e.text}</p></div>)}
           </div>
         </Container>
       </Reveal>
@@ -38,7 +38,6 @@ export function About() {
             {a.values.map((v) => (
               <div key={v.romaji} className="val-card">
                 <span className="kanji" lang="ja">{v.kanji}</span>
-                <span className="romaji">{v.romaji}</span>
                 <p>{v.meaning}</p>
               </div>
             ))}

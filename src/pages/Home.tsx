@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { usePageTitle } from '../components/layout/Layout';
 import { Certs, DeptContacts, NetworkMarquee, ProofStrip } from '../components/sections';
-import { Button, Container, Eyebrow, ImgReveal, Reveal } from '../components/ui';
+import { Button, Container, ImgReveal, Reveal } from '../components/ui';
 import { homeCopy } from '../content/home';
 import { useHref, useLang, useT } from '../i18n/LangContext';
 import '../styles/home.css';
@@ -36,7 +36,6 @@ export function Home() {
         <div className="home-hero-shade" />
         <Container>
           <div className="home-hero-copy enter">
-            <Eyebrow>{c.eyebrow}</Eyebrow>
             <h1>{c.title[0]}<span>{c.title[1]}</span></h1>
             <p>{c.intro}</p>
             <div className="hero-cta">
@@ -58,7 +57,6 @@ export function Home() {
               <Link className="home-service" to={href(services[i].key) + services[i].hash} key={service.title}>
                 <ImgReveal src={`/media/${services[i].image}`} className="home-service-photo" />
                 <div className="home-service-copy">
-                  <span className="home-tag">{service.tag}</span>
                   <h3>{service.title}</h3>
                   <p>{service.text}</p>
                   <span className="home-service-link">{t.cta.details}</span>
@@ -72,7 +70,7 @@ export function Home() {
 
       <Reveal as="section" className="home-industries home-section">
         <Container>
-          <div className="home-section-head"><div><Eyebrow>{c.audienceLabel}</Eyebrow><h2>{c.audienceTitle}</h2></div><p>{c.audienceLead}</p></div>
+          <div className="home-section-head"><h2>{c.audienceTitle}</h2><p>{c.audienceLead}</p></div>
           <div className="industry-select" role="tablist" aria-label={c.audienceLabel}>
             {c.audiences.map((a, i) => (
               <button key={a.name} role="tab" aria-selected={audience === i} aria-controls="industry-detail" onClick={() => setAudience(i)}>{a.name}</button>
@@ -104,8 +102,7 @@ export function Home() {
                   {i === 2 && <small>{c.render}</small>}
                 </div>
                 <div className="home-warehouse-copy">
-                  <span className="home-tag">{w.name}</span>
-                  <h3>{w.city}</h3>
+                  <h3>{w.name} · {w.city}</h3>
                   <p>{w.address}</p>
                   <div className="warehouse-feature">{c.warehouseTags[i]}</div>
                 </div>
@@ -137,7 +134,7 @@ export function Home() {
       <Reveal as="section" className="home-contact home-section">
         <Container>
           <div className="home-section-head">
-            <div><Eyebrow>{c.contactLabel}</Eyebrow><h2>{c.contactTitle}</h2></div>
+            <h2>{c.contactTitle}</h2>
             <div><p>{c.contactLead}</p><div className="hero-cta"><Button to={href('quote')}>{t.cta.quote}</Button><Link to={href('contact')}>{c.contactLink}</Link></div></div>
           </div>
           <ol className="home-steps stagger">{c.steps.map((step) => <li key={step.title}><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol>

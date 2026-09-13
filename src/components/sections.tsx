@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { useHref, useT } from '../i18n/LangContext';
 import { facts } from '../data/facts';
 import type { Faq as FaqT, Param } from '../content/types';
-import { Approved, Button, Container, Eyebrow, ImgReveal, Kanji, Marquee, Placeholder, Reveal, Stat } from './ui';
+import { Approved, Button, Container, ImgReveal, Kanji, Marquee, Placeholder, Reveal, Stat } from './ui';
 
 /* ---------------- Hero ---------------- */
 export function Hero() {
@@ -21,7 +21,6 @@ export function Hero() {
       <div className="hero-shade" />
       <Container>
         <div className="hero-copy enter">
-          <Eyebrow>{t.hero.eyebrow}</Eyebrow>
           <h1>{t.hero.h1}</h1>
           <p>{t.hero.sub}</p>
           <div className="hero-cta">
@@ -102,9 +101,8 @@ export function Audiences() {
           <p className="lead">{t.audiences.lead}</p>
         </div>
         <div className="aud stagger">
-          {t.audiences.items.map((a, i) => (
+          {t.audiences.items.map((a) => (
             <div key={a.title}>
-              <span className="idx">0{i + 1}</span>
               <h3>{a.title}</h3>
               <p>{a.text}</p>
             </div>
@@ -145,7 +143,6 @@ export function NetworkMarquee() {
   const items = t.about.network.regions.flatMap((r) => r.cities.split(',').map((c) => c.trim()));
   return (
     <Reveal as="section" className="section marquee-sec">
-      <Container><p className="marquee-title">{t.about.network.title}</p></Container>
       <Marquee items={items} />
     </Reveal>
   );

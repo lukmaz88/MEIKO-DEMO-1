@@ -13,7 +13,7 @@ export function Warehouse({ k }: { k: WarehouseContent['key'] }) {
   const deptNames = lang === 'pl' ? ['Magazyn', 'Biuro'] : ['Warehouse', 'Office'];
   return (
     <>
-      <PageHero title={`${w.name} · ${w.city}`} lead={w.lead} image={w.image} badge={w.badge} eyebrow={w.address} />
+      <PageHero title={`${w.name} · ${w.city}`} lead={w.lead} image={w.image} badge={w.badge} />
       <section className="section">
         <Container>
           <ParamTable rows={w.params} />

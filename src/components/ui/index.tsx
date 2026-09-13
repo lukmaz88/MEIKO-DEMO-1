@@ -118,7 +118,7 @@ export function Kanji({ char, className = '' }: { char: string; className?: stri
 }
 
 /** Page opener for subpages: title + lead, optional full-bleed image. */
-export function PageHero({ title, lead, image, badge, eyebrow }: { title: string; lead: string; image?: string; badge?: string; eyebrow?: string }) {
+export function PageHero({ title, lead, image, badge }: { title: string; lead: string; image?: string; badge?: string }) {
   if (image) {
     return (
       <section className="phero phero-img">
@@ -126,7 +126,6 @@ export function PageHero({ title, lead, image, badge, eyebrow }: { title: string
         <div className="hero-shade" />
         <Container>
           <div className="phero-copy">
-            {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
             <h1>{title}{badge && <span className="badge">{badge}</span>}</h1>
             <p className="lead">{lead}</p>
           </div>
@@ -137,7 +136,6 @@ export function PageHero({ title, lead, image, badge, eyebrow }: { title: string
   return (
     <section className="phero">
       <Container>
-        {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
         <h1>{title}{badge && <span className="badge">{badge}</span>}</h1>
         <p className="lead">{lead}</p>
       </Container>
