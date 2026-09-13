@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Navigate, NavLink, Outlet, useLocation, useParams } from 'react-router';
 import { LangProvider, useHref, useLang, useT } from '../../i18n/LangContext';
 import { isLang, twinPath } from '../../i18n/routes';
-import { Button, Container, Kanji } from '../ui';
+import { Button, Container, Kanji, Logo } from '../ui';
 import { SHOW_APPROVAL_MARKS } from '../../config';
 
 export function usePageTitle(title?: string) {
@@ -38,7 +38,7 @@ function Header() {
     <header className="hdr">
       <Container className="hdr-in">
         <Link to={href('home')} className="logo" aria-label={t.meta.siteName}>
-          <img src="/media/logo.svg" alt="" width={200} height={32} />
+          <Logo />
         </Link>
         <nav className={`nav ${open ? 'open' : ''}`} aria-label="Main">
           {t.nav.map((n) => (
@@ -67,7 +67,7 @@ function Footer() {
       <Container>
         <div className="ftr-grid">
           <div className="ftr-brand">
-            <img src="/media/logo.svg" alt={t.meta.siteName} width={200} height={32} />
+            <Logo />
             <p>{t.footer.address}</p>
             <p className="muted">{t.footer.note}</p>
           </div>

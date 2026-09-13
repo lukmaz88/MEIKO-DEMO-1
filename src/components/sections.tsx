@@ -49,7 +49,7 @@ export function ProofStrip() {
 }
 
 /* ---------------- Services bento ---------------- */
-const ICON: Record<string, string> = { svcForwarding: 'SP', svcWarehousing: 'MG', svcTransport: 'TR', 'svcWarehousing#cross-docking': 'XD' };
+const ICON: Record<string, string> = { svcForwarding: 'globe', svcWarehousing: 'warehouse', svcTransport: 'truck', 'svcWarehousing#cross-docking': 'crossdock' };
 
 export function ServiceGrid({ compact = false }: { compact?: boolean }) {
   const t = useT();
@@ -72,7 +72,7 @@ export function ServiceGrid({ compact = false }: { compact?: boolean }) {
               <Link key={s.name} to={to} className="card">
                 {i === 0 && <img src={svc.image} alt="" loading="lazy" />}
                 <div className={i === 0 ? 'card-body' : undefined} style={i === 0 ? undefined : { display: 'contents' }}>
-                  <span className="svc-icon" aria-hidden="true">{icon}</span>
+                  <span className="svc-icon" aria-hidden="true"><img src={`/media/icons/${icon}.png`} alt="" width={28} height={28} /></span>
                   <h3>{s.name}</h3>
                   <p>{s.short}</p>
                   <span className="more">{t.cta.more}</span>

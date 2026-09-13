@@ -89,3 +89,12 @@ export function PageHero({ title, lead, image, badge, eyebrow }: { title: string
 export function Placeholder({ label, className = '' }: { label: string; className?: string }) {
   return <div className={`ph ${className}`}><span>{label}</span></div>;
 }
+
+export function Logo() {
+  return (
+    <span className="brand">
+      <img src="/media/mark.png" alt="" width={34} height={32} />
+      <span className="brand-name">MEIKO TRANS</span>
+    </span>
+  );
+}
