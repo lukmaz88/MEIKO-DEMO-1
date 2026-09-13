@@ -7,7 +7,7 @@ import { homeCopy } from '../content/home';
 import { useHref, useLang, useT } from '../i18n/LangContext';
 import '../styles/home.css';
 
-const audienceImages = ['gen-manufacturing.jpg', 'still-bigbags.jpg', 'gen-operators.jpg'];
+const audienceImages = ['gen-manufacturing.jpg', 'gen-retail.jpg', 'gen-operators.jpg'];
 const ROTATE_MS = 7000;
 /** Split a line into word spans with a staggered delay index. */
 const words = (line: string, offset: number) =>
