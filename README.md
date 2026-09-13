@@ -27,7 +27,7 @@ npx vitest run       # testy: parytet PL/EN tras i treści, formularz
 
 ## Media
 
-`scripts/media.py` tnie pętlę hero (0:37–0:47.5 z `../MTP 2025.mp4`), kadry i eksportuje grafiki z PPTX. Uruchamiać z katalogu `app/`:
+`scripts/media.py` tnie kadry z `../MTP 2025.mp4`; pętla hero `hero-long.mp4` (31 s, 5 ujęć: 0:37, 1:00, 1:15, 1:24, 1:39, przejścia xfade) była składana ręcznie ffmpegiem w dwóch przebiegach (klipy CFR, potem xfade), kadry i eksportuje grafiki z PPTX. Uruchamiać z katalogu `app/`:
 
 ```bash
 python scripts/media.py
