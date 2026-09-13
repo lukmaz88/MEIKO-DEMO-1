@@ -14,7 +14,7 @@
 .home-hero-media, .home-hero-shade { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; z-index: -1; }
 .home-hero-shade { background: linear-gradient(90deg, rgba(6, 28, 46, .96) 0%, rgba(6, 28, 46, .88) 30%, rgba(6, 28, 46, .6) 58%, rgba(6, 28, 46, .2) 100%); }
 .home-hero > .container { width: 100%; }
-.home-hero-copy { padding: 64px 0 40px; max-width: 1360px; }
+.home-hero-copy { padding: 64px 0 40px; max-width: 1480px; }
 .home-hero .eyebrow { color: #d9e8f4; margin-bottom: 26px; }
 .home-hero h1 { font-size: clamp(40px, 4.8vw, 92px); font-weight: 600; letter-spacing: -.04em; line-height: 1.1; text-wrap: initial; max-width: 30ch; }
 .home-hero h1 span { display: block; color: #a9d0f4; }
