@@ -56,7 +56,6 @@ export const pl: Content = {
           { label: 'Przewoźników partnerskich', factKey: 'carrierPartners' },
           { label: 'Krajów obsługi', factKey: 'countries' },
           { label: 'Odpraw celnych miesięcznie', factKey: 'customsPerMonth' },
-          { label: 'Dzień roboczy na wycenę', factKey: 'replyTime' },
         ],
         benefits: [
           { title: 'Jedna osoba kontaktowa', text: 'Opiekun zlecenia zna Twoje przesyłki i odpowiada na pytania bez przekazywania dalej.' },
@@ -66,7 +65,7 @@ export const pl: Content = {
         faq: [
           { q: 'Co obejmuje usługa spedycji?', a: 'Dobór środka transportu, rezerwację u przewoźnika, dokumenty przewozowe, ubezpieczenie ładunku na życzenie, odprawę celną i nadzór nad dostawą.' },
           { q: 'Gdzie działamy?', a: 'Z Gliwic obsługujemy Polskę i Europę transportem drogowym, a przez porty w Gdańsku, Hamburgu i Antwerpii oraz lotniska w Katowicach, Warszawie i Frankfurcie także kierunki zamorskie.' },
-          { q: 'Jak długo trwa wycena?', a: 'Standardowe zapytanie wyceniamy w ciągu jednego dnia roboczego. Projekty wieloetapowe uzgadniamy na spotkaniu.' },
+          { q: 'Jak długo trwa wycena?', a: 'Na standardowe zapytanie odpowiadamy jak najszybciej, zwykle tego samego dnia. Projekty wieloetapowe uzgadniamy na spotkaniu.' },
         ],
       },
       {
@@ -78,7 +77,6 @@ export const pl: Content = {
           { label: 'Przewoźników partnerskich', factKey: 'carrierPartners' },
           { label: 'Krajów obsługi', factKey: 'countries' },
           { label: 'W Polsce od', factKey: 'inPolandSince' },
-          { label: 'Dzień roboczy na wycenę', factKey: 'replyTime' },
         ],
         benefits: [
           { title: 'Transport drogowy w Europie', text: 'Ładunki całopojazdowe i drobnicowe, naczepy standardowe i specjalistyczne, stała pula przewoźników.' },
@@ -88,7 +86,7 @@ export const pl: Content = {
         faq: [
           { q: 'Jakie ładunki przewozicie?', a: 'Towary przemysłowe, komponenty produkcyjne, części zamienne, towary paletyzowane i w big-bagach, a także ładunki ADR klasy 8 i 9.' },
           { q: 'Gdzie działamy?', a: 'Cała Europa transportem drogowym. Kierunki zamorskie przez porty Morza Bałtyckiego i Północnego oraz lotniska w Polsce i Niemczech.' },
-          { q: 'Jak długo trwa wycena?', a: 'Transport drogowy wyceniamy w ciągu jednego dnia roboczego. Fracht lotniczy i morski zależy od dostępności przewoźnika, zwykle do dwóch dni.' },
+          { q: 'Jak długo trwa wycena?', a: 'Transport drogowy wyceniamy jak najszybciej. Fracht lotniczy i morski zależy od dostępności przewoźnika.' },
         ],
       },
       {
@@ -110,7 +108,7 @@ export const pl: Content = {
         faq: [
           { q: 'Co obejmuje usługa magazynowania?', a: 'Przyjęcie, składowanie na regałach wysokich lub blokowo, kompletację, pakowanie, etykietowanie, cross-docking i wysyłkę. Opcjonalnie skład celny i strefę ADR.' },
           { q: 'Gdzie są magazyny?', a: 'Dwa w Gliwicach przy węźle A1 i A4 oraz trzeci w Dąbrowie Górniczej, w budowie, z planowanym startem w czerwcu 2027.' },
-          { q: 'Jak długo trwa wycena?', a: 'Wycenę powierzchni i obsługi przygotowujemy w ciągu jednego dnia roboczego od przesłania danych o towarze i wolumenach.' },
+          { q: 'Jak długo trwa wycena?', a: 'Wycenę powierzchni i obsługi przygotowujemy jak najszybciej po otrzymaniu danych o towarze i wolumenach.' },
         ],
       },
     ],
@@ -130,7 +128,7 @@ export const pl: Content = {
     kanjiMeaning: 'kizuna · więź',
     items: [
       { trait: 'Doświadczeni', fact: 'Grupa Meiko działa w logistyce od 1949 roku, w Polsce od 2005. Procesy, które stosujemy w Gliwicach, sprawdziły się wcześniej w Nagoi, Chicago i Antwerpii.' },
-      { trait: 'Zorientowani na klienta', fact: 'Każdy klient ma jedną osobę kontaktową. Na zapytanie odpowiadamy w ciągu jednego dnia roboczego.' },
+      { trait: 'Zorientowani na klienta', fact: 'Każdy klient ma jedną osobę kontaktową. Na zapytania odpowiadamy jak najszybciej.' },
       { trait: 'Wiarygodni', fact: 'System jakości ISO 9001:2015 i status AEO nadany przez administrację celną. Oba audytowane, oba do wglądu.' },
     ],
   },
@@ -197,21 +195,21 @@ export const pl: Content = {
   },
   quoteBand: {
     title: 'Opisz, co i skąd wysyłasz. Resztę policzymy.',
-    lead: 'Trzy krótkie kroki, jeden dzień roboczy na odpowiedź.',
+    lead: 'Trzy pola. Odpowiemy jak najszybciej.',
   },
   quote: {
     title: 'Zapytanie ofertowe',
-    lead: 'Trzy krótkie kroki. Odpowiadamy w ciągu jednego dnia roboczego.',
-    reply: 'Odpowiadamy w ciągu jednego dnia roboczego.',
+    lead: 'Trzy pola. Odpowiemy jak najszybciej.',
+    reply: 'Odpowiemy jak najszybciej.',
     fields: { contact: 'Osoba kontaktowa', email: 'Adres e-mail', service: 'Usługa', company: 'Nazwa firmy', phone: 'Telefon', cargo: 'Rodzaj ładunku' },
     servicePlaceholder: 'Wybierz usługę',
     submit: 'Wyślij zapytanie',
-    success: { title: 'Dziękujemy. Zapytanie dotarło.', text: 'Opiekun zlecenia odezwie się w ciągu jednego dnia roboczego na podany adres e-mail lub telefon.' },
+    success: { title: 'Dziękujemy. Zapytanie dotarło.', text: 'Opiekun zlecenia odezwie się jak najszybciej na podany adres e-mail lub telefon.' },
     errors: { required: 'To pole jest wymagane.', email: 'Podaj poprawny adres e-mail.' },
     flow: {
       title: 'Powiedz nam, czego potrzebujesz. Resztą zajmiemy się my.',
-      lead: 'Trzy pola. Opiekun zlecenia odezwie się w ciągu jednego dnia roboczego.',
-      after: ['Piszesz kilka słów o ładunku', 'Analizujemy trasę i wymagania', 'Wracamy z wyceną i dalszymi krokami'],
+      lead: 'Trzy pola. Opiekun zlecenia odezwie się jak najszybciej.',
+      after: ['Piszesz kilka słów o ładunku', 'Analizujemy trasę i wymagania', 'Odpowiadamy jak najszybciej z wyceną'],
       cardTitle: 'Poproś o wycenę',
       cardLead: 'Wystarczy kilka słów, resztę ustalimy w rozmowie.',
       service: 'Usługa',

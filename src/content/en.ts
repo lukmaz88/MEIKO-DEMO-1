@@ -56,7 +56,6 @@ export const en: Content = {
           { label: 'Partner carriers', factKey: 'carrierPartners' },
           { label: 'Countries served', factKey: 'countries' },
           { label: 'Customs clearances a month', factKey: 'customsPerMonth' },
-          { label: 'Working day to quote', factKey: 'replyTime' },
         ],
         benefits: [
           { title: 'One contact person', text: 'Your order owner knows your shipments and answers questions without passing you on.' },
@@ -66,7 +65,7 @@ export const en: Content = {
         faq: [
           { q: 'What does freight forwarding cover?', a: 'Choice of transport mode, carrier booking, shipping documents, cargo insurance on request, customs clearance and delivery supervision.' },
           { q: 'Where do we operate?', a: 'From Gliwice we cover Poland and Europe by road, and overseas destinations through the ports of Gdańsk, Hamburg and Antwerp and the airports in Katowice, Warsaw and Frankfurt.' },
-          { q: 'How long does a quote take?', a: 'A standard enquiry is priced within one working day. Multi-stage projects are agreed in a meeting.' },
+          { q: 'How long does a quote take?', a: 'We answer a standard enquiry as soon as possible, usually the same day. Multi-stage projects are agreed in a meeting.' },
         ],
       },
       {
@@ -78,7 +77,6 @@ export const en: Content = {
           { label: 'Partner carriers', factKey: 'carrierPartners' },
           { label: 'Countries served', factKey: 'countries' },
           { label: 'In Poland since', factKey: 'inPolandSince' },
-          { label: 'Working day to quote', factKey: 'replyTime' },
         ],
         benefits: [
           { title: 'European road transport', text: 'Full and part loads, standard and specialised trailers, a stable pool of carriers.' },
@@ -88,7 +86,7 @@ export const en: Content = {
         faq: [
           { q: 'What cargo do we carry?', a: 'Industrial goods, production components, spare parts, palletised and big-bag cargo, as well as ADR class 8 and 9 loads.' },
           { q: 'Where do we operate?', a: 'All of Europe by road. Overseas through Baltic and North Sea ports and airports in Poland and Germany.' },
-          { q: 'How long does a quote take?', a: 'Road transport is priced within one working day. Air and ocean freight depend on carrier availability, usually up to two days.' },
+          { q: 'How long does a quote take?', a: 'Road transport is priced as soon as possible. Air and ocean freight depend on carrier availability.' },
         ],
       },
       {
@@ -110,7 +108,7 @@ export const en: Content = {
         faq: [
           { q: 'What does warehousing cover?', a: 'Receiving, high-bay or block storage, picking, packing, labelling, cross-docking and dispatch. Optionally bonded storage and an ADR zone.' },
           { q: 'Where are the warehouses?', a: 'Two in Gliwice at the A1/A4 junction and a third in Dąbrowa Górnicza, under construction, with launch planned for June 2027.' },
-          { q: 'How long does a quote take?', a: 'We price space and handling within one working day of receiving your goods and volume data.' },
+          { q: 'How long does a quote take?', a: 'We price space and handling as soon as possible after receiving your goods and volume data.' },
         ],
       },
     ],
@@ -130,7 +128,7 @@ export const en: Content = {
     kanjiMeaning: 'kizuna · bond',
     items: [
       { trait: 'Experienced', fact: 'Meiko Group has worked in logistics since 1949, in Poland since 2005. The processes we run in Gliwice were proven earlier in Nagoya, Chicago and Antwerp.' },
-      { trait: 'Customer-focused', fact: 'Every customer has one contact person. We answer enquiries within one working day.' },
+      { trait: 'Customer-focused', fact: 'Every customer has one contact person. We answer enquiries as soon as possible.' },
       { trait: 'Reliable', fact: 'ISO 9001:2015 quality system and AEO status granted by the customs administration. Both audited, both available on request.' },
     ],
   },
@@ -197,21 +195,21 @@ export const en: Content = {
   },
   quoteBand: {
     title: 'Tell us what you ship and from where. We do the maths.',
-    lead: 'Three short steps, one working day to reply.',
+    lead: 'Three fields. We reply as soon as possible.',
   },
   quote: {
     title: 'Request a quotation',
-    lead: 'Three short steps. We reply within one working day.',
-    reply: 'We reply within one working day.',
+    lead: 'Three fields. We reply as soon as possible.',
+    reply: 'We reply as soon as possible.',
     fields: { contact: 'Contact person', email: 'Email address', service: 'Requested service', company: 'Company name', phone: 'Telephone', cargo: 'Cargo type' },
     servicePlaceholder: 'Choose a service',
     submit: 'Send the request',
-    success: { title: 'Thank you. Your request has arrived.', text: 'Your order owner will get back to you within one working day by email or phone.' },
+    success: { title: 'Thank you. Your request has arrived.', text: 'Your order owner will get back to you as soon as possible by email or phone.' },
     errors: { required: 'This field is required.', email: 'Enter a valid email address.' },
     flow: {
       title: 'Tell us what you need. We take care of the rest.',
-      lead: 'Three fields. Your order owner gets back to you within one working day.',
-      after: ['You write a few words about the cargo', 'We analyse the route and requirements', 'We come back with a quote and next steps'],
+      lead: 'Three fields. Your order owner gets back to you as soon as possible.',
+      after: ['You write a few words about the cargo', 'We analyse the route and requirements', 'We reply as soon as possible with a quote'],
       cardTitle: 'Request a quote',
       cardLead: 'A few words are enough, we settle the rest in a call.',
       service: 'Service',
