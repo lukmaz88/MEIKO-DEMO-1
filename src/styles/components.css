@@ -18,8 +18,8 @@
 .burger.x span:first-child { top: 21px; transform: rotate(45deg); } .burger.x span:last-child { top: 21px; transform: rotate(-45deg); }
 @media (max-width: 900px) {
   .burger { display: block; }
-  .nav { position: fixed; inset: 72px 0 0 0; background: var(--bg); flex-direction: column; align-items: flex-start; padding: 40px var(--gutter); gap: 8px; transform: translateX(100%); transition: transform .35s var(--ease); overflow: auto; }
-  .nav.open { transform: none; }
+  .nav { position: fixed; inset: 72px 0 auto 0; height: calc(100dvh - 72px); background: var(--bg); flex-direction: column; align-items: flex-start; padding: 40px var(--gutter); gap: 8px; visibility: hidden; opacity: 0; pointer-events: none; transition: opacity .2s var(--ease), visibility .2s; overflow: auto; }
+  .nav.open { visibility: visible; opacity: 1; pointer-events: auto; }
   .nav > a { font-size: 28px; font-family: var(--font-h); font-weight: 700; padding: 10px 0; color: var(--ink); }
   .nav > a::after { display: none; }
   .nav-tools { margin: 24px 0 0; flex-direction: column; align-items: flex-start; }
