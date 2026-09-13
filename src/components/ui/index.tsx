@@ -167,7 +167,7 @@ export function Intro() {
   return (
     <div className="intro" aria-hidden="true">
       <div className="intro-pane top" /><div className="intro-pane bottom" />
-      <img className="intro-mark" src="/media/mark.png" alt="" />
+      <img className="intro-mark" src="/media/logo-light.png" alt="" />
     </div>
   );
 }
