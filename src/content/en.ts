@@ -159,6 +159,7 @@ export const en: Content = {
         key: 'whDabrowa', name: 'Warehouse 3', city: 'Dąbrowa Górnicza', address: 'ul. Innowacyjna, 42-520 Dąbrowa Górnicza',
         lead: 'A new investment. The largest Meiko site in Poland, designed for contract logistics and bonded storage.',
         badge: 'launch 06.2027',
+        image: '/media/wh3-render.jpg',
         params: [{ label: 'Floor space', factKey: 'wh3Sqm' }, { label: 'Pallet spaces', factKey: 'wh3Pallets' }, { label: 'Loading docks', factKey: 'wh3Docks' }],
         features: ['17 docks, including 2 zero-level gates', 'Integrated WMS', 'Bonded warehouse', 'Space for customer-specific projects'],
       },

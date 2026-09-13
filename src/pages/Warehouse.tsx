@@ -1,6 +1,6 @@
 import { usePageTitle } from '../components/layout/Layout';
 import { DeptContacts, ParamTable, QuoteBlock } from '../components/sections';
-import { Container, PageHero, Placeholder, Reveal } from '../components/ui';
+import { Container, ImgReveal, PageHero, Placeholder, Reveal } from '../components/ui';
 import type { WarehouseContent } from '../content/types';
 import { useLang, useT } from '../i18n/LangContext';
 
@@ -20,7 +20,7 @@ export function Warehouse({ k }: { k: WarehouseContent['key'] }) {
           <div className="two">
             <div>
               <ul className="feat">{w.features.map((f) => <li key={f}>{f}</li>)}</ul>
-              {!w.image && <p className="lead" style={{ marginTop: 32 }}>{t.warehouses.launchNote}</p>}
+              {w.badge && <p className="lead" style={{ marginTop: 32 }}>{t.warehouses.launchNote}</p>}
             </div>
             <div>
               <p style={{ marginBottom: 16 }}>{w.address}</p>
@@ -29,19 +29,19 @@ export function Warehouse({ k }: { k: WarehouseContent['key'] }) {
           </div>
         </Container>
       </section>
-      {w.image ? (
+      {k !== 'whDabrowa' ? (
         <Reveal as="section" className="section">
           <Container>
-            <div className="gal">
-              <img src="/media/still-aisle.jpg" alt="" loading="lazy" />
-              <img src="/media/still-forklift.jpg" alt="" loading="lazy" />
-              <img src="/media/still-bigbags.jpg" alt="" loading="lazy" />
+            <div className="gal stagger">
+              <ImgReveal src="/media/still-aisle.jpg" />
+              <ImgReveal src="/media/still-forklift.jpg" />
+              <ImgReveal src="/media/still-bigbags.jpg" />
             </div>
           </Container>
         </Reveal>
       ) : (
         <Reveal as="section" className="section">
-          <Container><Placeholder label={t.warehouses.renderPlaceholder} className="render" /></Container>
+          <Container><ImgReveal src="/media/wh3-render.jpg" className="wide" /></Container>
         </Reveal>
       )}
       <DeptContacts only={deptNames} />

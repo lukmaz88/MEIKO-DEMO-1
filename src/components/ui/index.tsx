@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { SHOW_APPROVAL_MARKS } from '../../config';
 import { facts, type Fact, type FactKey } from '../../data/facts';
@@ -48,8 +48,67 @@ export function Eyebrow({ children }: { children: ReactNode }) {
 export function Stat({ label, factKey }: { label: string; factKey: FactKey }) {
   return (
     <div className="stat">
-      <div className="stat-value"><Approved fact={facts[factKey]} /></div>
+      <div className="stat-value"><CountUp fact={facts[factKey]} /></div>
       <div className="stat-label">{label}</div>
+    </div>
+  );
+}
+
+/** Counts the leading number of a fact up from 0 once it scrolls into view. Non-numeric values render as-is. */
+export function CountUp({ fact }: { fact: Fact }) {
+  const t = useT();
+  const ref = useRef<HTMLSpanElement>(null);
+  const m = /^(\d[\d\s]*?)(\s*\D.*)?$/.exec(fact.value);
+  const parsed = m ? parseInt(m[1].replace(/\s/g, ''), 10) : NaN;
+  const isYear = /^\d{4}$/.test(fact.value.trim()) && parsed >= 1900 && parsed <= 2100;
+  const target = isYear ? NaN : parsed;
+  const [n, setN] = useState(Number.isNaN(target) ? -1 : 0);
+  useEffect(() => {
+    if (Number.isNaN(target) || !ref.current) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setN(target); return; }
+    const el = ref.current;
+    let raf = 0;
+    const io = new IntersectionObserver((es) => {
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      const t0 = performance.now();
+      const dur = 1400;
+      const tick = (now: number) => {
+        const p = Math.min(1, (now - t0) / dur);
+        const e = 1 - Math.pow(1 - p, 3);
+        setN(Math.round(target * e));
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    }, { threshold: 0.3 });
+    io.observe(el);
+    return () => { io.disconnect(); cancelAnimationFrame(raf); };
+  }, [target]);
+  const fmt = (v: number) => v.toLocaleString('pl-PL').replace(/,/g, ' ').replace(/\u00a0/g, ' ');
+  const text = Number.isNaN(target) ? fact.value : `${fmt(n)}${m![2] ?? ''}`;
+  return (
+    <span className="approved" ref={ref}>
+      {text}
+      {!fact.approved && SHOW_APPROVAL_MARKS && <i className="dot" title={t.approval.tooltip} aria-label={t.approval.tooltip} role="img" />}
+    </span>
+  );
+}
+
+/** Image with curtain reveal: image settles from scale 1.12 while an ink panel wipes away. Driven by the parent .reveal.in. */
+export function ImgReveal({ src, className = '', alt = '', loading = 'lazy' }: { src: string; className?: string; alt?: string; loading?: 'lazy' | 'eager' }) {
+  return (
+    <span className={`imgr ${className}`}>
+      <img src={src} alt={alt} loading={loading} />
+    </span>
+  );
+}
+
+/** Single horizontal marquee. One per page. */
+export function Marquee({ items }: { items: string[] }) {
+  const row = items.map((x, i) => <span key={i}>{x}</span>);
+  return (
+    <div className="marquee" aria-hidden="true">
+      <div className="marquee-track">{row}{row}</div>
     </div>
   );
 }

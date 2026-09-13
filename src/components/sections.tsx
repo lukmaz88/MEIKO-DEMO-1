@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { useHref, useT } from '../i18n/LangContext';
 import { facts } from '../data/facts';
 import type { Faq as FaqT, Param } from '../content/types';
-import { Approved, Button, Container, Eyebrow, Kanji, Placeholder, Reveal, Stat } from './ui';
+import { Approved, Button, Container, Eyebrow, ImgReveal, Kanji, Marquee, Placeholder, Reveal, Stat } from './ui';
 
 /* ---------------- Hero ---------------- */
 export function Hero() {
@@ -20,7 +20,7 @@ export function Hero() {
       {video && <video className="hero-media" src="/media/hero.mp4" muted playsInline loop autoPlay preload="none" poster="/media/hero-poster.jpg" />}
       <div className="hero-shade" />
       <Container>
-        <div className="hero-copy">
+        <div className="hero-copy enter">
           <Eyebrow>{t.hero.eyebrow}</Eyebrow>
           <h1>{t.hero.h1}</h1>
           <p>{t.hero.sub}</p>
@@ -63,14 +63,14 @@ export function ServiceGrid({ compact = false }: { compact?: boolean }) {
             <p className="lead">{t.services.lead}</p>
           </div>
         )}
-        <div className="svc-grid">
+        <div className="svc-grid stagger">
           {t.services.homeTiles.map((s, i) => {
             const svc = t.services.key.find((k) => k.key === s.key)!;
             const to = href(s.key) + (s.hash ?? '');
             const icon = ICON[s.key + (s.hash ?? '')];
             return (
               <Link key={s.name} to={to} className="card">
-                {i === 0 && <img src={svc.image} alt="" loading="lazy" />}
+                {i === 0 && <ImgReveal src={svc.image} className="svc-img" />}
                 <div className={i === 0 ? 'card-body' : undefined} style={i === 0 ? undefined : { display: 'contents' }}>
                   <span className="svc-icon" aria-hidden="true"><img src={`/media/icons/${icon}.png`} alt="" width={28} height={28} /></span>
                   <h3>{s.name}</h3>
@@ -101,7 +101,7 @@ export function Audiences() {
           <h2>{t.audiences.title}</h2>
           <p className="lead">{t.audiences.lead}</p>
         </div>
-        <div className="aud">
+        <div className="aud stagger">
           {t.audiences.items.map((a, i) => (
             <div key={a.title}>
               <span className="idx">0{i + 1}</span>
@@ -122,7 +122,7 @@ export function WhyMeiko() {
     <Reveal as="section" className="section">
       <Container>
         <div className="why">
-          <img src="/media/still-aisle.jpg" alt="" loading="lazy" />
+          <ImgReveal src="/media/team.jpg" className="why-img parallax" />
           <div className="why-copy">
             <span className="kanji-bg" aria-hidden="true">{t.why.kanji}</span>
             <h2>{t.why.title}</h2>
@@ -139,6 +139,18 @@ export function WhyMeiko() {
   );
 }
 
+/* ---------------- Group locations marquee ---------------- */
+export function NetworkMarquee() {
+  const t = useT();
+  const items = t.about.network.regions.flatMap((r) => r.cities.split(',').map((c) => c.trim()));
+  return (
+    <Reveal as="section" className="section marquee-sec">
+      <Container><p className="marquee-title">{t.about.network.title}</p></Container>
+      <Marquee items={items} />
+    </Reveal>
+  );
+}
+
 /* ---------------- Warehouses ---------------- */
 export function WarehouseTiles() {
   const t = useT();
@@ -150,7 +162,7 @@ export function WarehouseTiles() {
           <h2>{t.warehouses.title}</h2>
           <p className="lead">{t.warehouses.lead}</p>
         </div>
-        <div className="wh-grid">
+        <div className="wh-grid stagger">
           {t.warehouses.items.map((w) => (
             <Link key={w.key} to={href(w.key)} className="wh-tile">
               {w.image ? <img src={w.image} alt="" loading="lazy" /> : <Placeholder label={t.warehouses.renderPlaceholder} />}
@@ -181,7 +193,7 @@ export function Certs({ compact = false }: { compact?: boolean }) {
             <p className="lead">{t.certs.lead}</p>
           </div>
         )}
-        <div className="certs">
+        <div className="certs stagger">
           {t.certs.items.map((c, i) => (
             <Link key={c.code} to={href('quality')} className="cert">
               {i === 0 ? <img src="/media/iso-9001.jpg" alt="" loading="lazy" /> : <span className="cert-mark" aria-hidden="true">AEO</span>}
@@ -211,7 +223,7 @@ export function DeptContacts({ only, heading = true }: { only?: string[]; headin
             <p className="lead">{t.depts.lead}</p>
           </div>
         )}
-        <div className="depts">
+        <div className="depts stagger">
           {items.map((d) => (
             <div key={d.name}>
               <h3>{d.name}</h3>

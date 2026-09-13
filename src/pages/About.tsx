@@ -1,5 +1,5 @@
 import { usePageTitle } from '../components/layout/Layout';
-import { Container, PageHero, Reveal } from '../components/ui';
+import { Container, ImgReveal, PageHero, Reveal } from '../components/ui';
 import { useT } from '../i18n/LangContext';
 
 export function About() {
@@ -19,14 +19,14 @@ export function About() {
                 {a.group.facts.map((f) => <div key={f.label}><dt>{f.label}</dt><dd>{f.value}</dd></div>)}
               </dl>
             </div>
-            <img src="/media/map-europe.jpg" alt="" loading="lazy" style={{ borderRadius: 6, width: '100%' }} />
+            <ImgReveal src="/media/map-europe.jpg" className="about-map" />
           </div>
         </Container>
       </Reveal>
       <Reveal as="section" className="section">
         <Container>
           <div className="sec-head"><h2>{a.timelineTitle}</h2></div>
-          <div className="tl">
+          <div className="tl stagger">
             {a.timeline.map((e) => <div key={e.era}><span className="era">{e.era}</span><h3>{e.title}</h3><p>{e.text}</p></div>)}
           </div>
         </Container>
@@ -34,7 +34,7 @@ export function About() {
       <Reveal as="section" className="section">
         <Container>
           <div className="sec-head"><h2>{a.valuesTitle}</h2><p className="lead">{a.valuesLead}</p></div>
-          <div className="vals">
+          <div className="vals stagger">
             {a.values.map((v) => (
               <div key={v.romaji} className="val-card">
                 <span className="kanji" lang="ja">{v.kanji}</span>

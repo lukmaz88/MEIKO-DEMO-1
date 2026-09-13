@@ -159,6 +159,7 @@ export const pl: Content = {
         key: 'whDabrowa', name: 'Magazyn 3', city: 'Dąbrowa Górnicza', address: 'ul. Innowacyjna, 42-520 Dąbrowa Górnicza',
         lead: 'Nowa inwestycja. Największy obiekt Meiko w Polsce, projektowany pod obsługę kontraktową i skład celny.',
         badge: 'start 06.2027',
+        image: '/media/wh3-render.jpg',
         params: [{ label: 'Powierzchnia', factKey: 'wh3Sqm' }, { label: 'Miejsc paletowych', factKey: 'wh3Pallets' }, { label: 'Doków', factKey: 'wh3Docks' }],
         features: ['17 doków, w tym 2 bramy z poziomu zero', 'Zintegrowany system WMS', 'Skład celny', 'Powierzchnia pod projekty dedykowane'],
       },

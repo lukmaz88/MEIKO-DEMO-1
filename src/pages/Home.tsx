@@ -1,5 +1,5 @@
 import { usePageTitle } from '../components/layout/Layout';
-import { Audiences, Certs, DeptContacts, Hero, QuoteBlock, ServiceGrid, WarehouseTiles, WhyMeiko } from '../components/sections';
+import { Audiences, Certs, DeptContacts, Hero, NetworkMarquee, QuoteBlock, ServiceGrid, WarehouseTiles, WhyMeiko } from '../components/sections';
 
 export function Home() {
   usePageTitle();
@@ -9,6 +9,7 @@ export function Home() {
       <ServiceGrid />
       <Audiences />
       <WhyMeiko />
+      <NetworkMarquee />
       <WarehouseTiles />
       <Certs />
       <DeptContacts />
