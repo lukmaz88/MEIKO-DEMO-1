@@ -12,7 +12,7 @@
   --font-h: "Manrope", system-ui, sans-serif;
   --font-b: "Inter", system-ui, sans-serif;
   --font-jp: "Noto Sans JP", sans-serif;
-  --max: 1280px;
+  --max: 1320px;
   --gutter: clamp(20px, 4vw, 48px);
   --sec: clamp(80px, 12vw, 160px);
   --r: 6px;
@@ -45,3 +45,13 @@ ul { padding: 0; list-style: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } html { scroll-behavior: auto; } }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* wide screens: more room, slightly larger type */
+@media (min-width: 1700px) {
+  :root { --max: 1600px; --sec: clamp(120px, 9vw, 200px); }
+  body { font-size: 19px; }
+  h1 { font-size: clamp(56px, 5vw, 104px); }
+  h2 { font-size: clamp(40px, 3.4vw, 68px); }
+  h3 { font-size: clamp(22px, 1.5vw, 28px); }
+  .lead { font-size: clamp(20px, 1.25vw, 25px); }
+}

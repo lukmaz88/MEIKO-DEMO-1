@@ -143,3 +143,35 @@
 @media (prefers-reduced-motion: reduce) {
   .industry-detail { animation: none; }
 }
+
+@media (min-width: 1700px) {
+  .home-page h2 { font-size: clamp(40px, 3.2vw, 62px); }
+  .home-section { padding: 128px 0; }
+  .home-section-head { margin-bottom: 56px; }
+  .home-section-head > p, .home-section-head > div > p { font-size: 20px; max-width: 52ch; }
+  .home-hero-copy { padding: 160px 0 120px; max-width: 1040px; }
+  .home-hero h1 { font-size: clamp(64px, 4.6vw, 92px); max-width: 24ch; }
+  .home-hero-copy > p { font-size: 22px; max-width: 54ch; }
+  .home-services { gap: 28px; }
+  .home-service-photo { min-height: 360px; }
+  .home-service-copy { padding: 40px; }
+  .home-service h3 { font-size: 30px; }
+  .home-service p { font-size: 17px; }
+  .home-tag { font-size: 12px; }
+  .home-service-link, .home-customs { font-size: 16px; }
+  .industry-select button { font-size: 19px; padding: 26px 20px; }
+  .industry-copy h3 { font-size: 38px; }
+  .industry-copy > p { font-size: 19px; }
+  .industry-copy li { font-size: 17px; }
+  .industry-detail > img { height: 460px; }
+  .home-warehouse-grid { gap: 32px; }
+  .home-warehouse-photo { height: 300px; }
+  .home-warehouse h3 { font-size: 30px; }
+  .home-warehouse p { font-size: 14px; }
+  .home-about-img, .home-about-img img { min-height: 640px; max-height: 800px; }
+  .home-about-intro { font-size: 19px; }
+  .home-about-copy li p { font-size: 16px; }
+  .home-quality h2 { font-size: 40px; }
+  .home-steps h3 { font-size: 23px; }
+  .home-steps p { font-size: 16px; }
+}
