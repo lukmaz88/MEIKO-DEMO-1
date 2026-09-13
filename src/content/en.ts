@@ -267,7 +267,7 @@ export const en: Content = {
   },
   quality: {
     title: 'Quality and certifications',
-    lead: 'ISO 9001:2015 and AEO status are two external confirmations of how we work. Below, what they mean for the customer.',
+    lead: 'ISO 9001:2015 certificate, AEO authorisation and a quality policy signed by the board. Click a document to see the original. Below, what they mean for the customer.',
     outcomesTitle: 'What it means in practice',
     outcomes: [
       { title: 'Consistent quality', text: 'Every order passes the same checkpoints, whoever handles it.' },

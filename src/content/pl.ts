@@ -267,7 +267,7 @@ export const pl: Content = {
   },
   quality: {
     title: 'Jakość i certyfikaty',
-    lead: 'Certyfikat ISO 9001:2015 i status AEO to dwa zewnętrzne potwierdzenia tego, jak pracujemy. Poniżej, co z nich wynika dla klienta.',
+    lead: 'Certyfikat ISO 9001:2015, pozwolenie AEO i polityka jakości podpisana przez zarząd. Kliknij dokument, aby zobaczyć oryginał. Poniżej, co z nich wynika dla klienta.',
     outcomesTitle: 'Co to oznacza w praktyce',
     outcomes: [
       { title: 'Powtarzalna jakość', text: 'Każde zlecenie przechodzi te same punkty kontrolne, niezależnie od tego, kto je obsługuje.' },
