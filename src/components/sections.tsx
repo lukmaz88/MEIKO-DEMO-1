@@ -6,7 +6,7 @@ import '../styles/home.css';
 import { QuoteCard } from './QuoteCard';
 import { facts } from '../data/facts';
 import type { Faq as FaqT, Param } from '../content/types';
-import { Approved, Button, Container, CountUp, ImgReveal, Kanji, Marquee, Placeholder, Reveal, Stat } from './ui';
+import { Approved, Button, Container, CountUp, ImgReveal, Kanji, Lightbox, Marquee, Placeholder, Reveal, Stat } from './ui';
 
 /* ---------------- Hero ---------------- */
 export function Hero() {
@@ -169,8 +169,10 @@ export function WarehouseTiles() {
 export function Certs({ compact = false, heading = true }: { compact?: boolean; heading?: boolean }) {
   const t = useT();
   const href = useHref();
+  const [zoom, setZoom] = useState(false);
   return (
     <Reveal as="section" className="section">
+      {zoom && <Lightbox src="/media/iso-9001-full.jpg" alt={t.certs.items[0].code} onClose={() => setZoom(false)} />}
       <Container>
         {heading && (
           <div className="sec-head">
@@ -181,7 +183,12 @@ export function Certs({ compact = false, heading = true }: { compact?: boolean; 
         <div className="certs stagger">
           {t.certs.items.map((c, i) => (
             <Link key={c.code} to={href('quality')} className="cert">
-              {i === 0 ? <img src="/media/iso-9001.jpg" alt="" loading="lazy" /> : <span className="cert-mark" aria-hidden="true">AEO</span>}
+              {i === 0 ? (
+                <button type="button" className="cert-zoom" aria-label={t.certs.zoom} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setZoom(true); }}>
+                  <img src="/media/iso-9001.jpg" alt="" loading="lazy" />
+                  <span aria-hidden="true">+</span>
+                </button>
+              ) : <span className="cert-mark" aria-hidden="true">AEO</span>}
               <div>
                 <div className="code">{c.code}</div>
                 <div className="name">{c.name}</div>

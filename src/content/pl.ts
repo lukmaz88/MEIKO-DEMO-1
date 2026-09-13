@@ -177,6 +177,7 @@ export const pl: Content = {
   },
   certs: {
     title: 'Jakość i certyfikaty',
+    zoom: 'Powiększ certyfikat',
     lead: 'Dwa dokumenty, które mówią więcej niż deklaracje. Oba audytowane przez podmioty zewnętrzne.',
     items: [
       { code: 'ISO 9001:2015', name: 'System zarządzania jakością', text: 'Certyfikat obejmuje spedycję krajową i międzynarodową oraz usługi magazynowe. Audyt nadzoru co roku.' },

@@ -177,6 +177,7 @@ export const en: Content = {
   },
   certs: {
     title: 'Quality and certifications',
+    zoom: 'Enlarge certificate',
     lead: 'Two documents that say more than declarations. Both audited by external bodies.',
     items: [
       { code: 'ISO 9001:2015', name: 'Quality management system', text: 'Covers domestic and international freight forwarding and warehousing services. Surveillance audit every year.' },

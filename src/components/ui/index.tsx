@@ -174,3 +174,20 @@ export function Intro() {
     </div>
   );
 }
+
+/** Full-screen image preview. Closes on Escape, backdrop click or the close button. */
+export function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = prev; };
+  }, [onClose]);
+  return (
+    <div className="lightbox" role="dialog" aria-modal="true" aria-label={alt} onClick={onClose}>
+      <button type="button" className="lightbox-close" aria-label="Zamknij" onClick={onClose}>×</button>
+      <img src={src} alt={alt} onClick={(e) => e.stopPropagation()} />
+    </div>
+  );
+}
