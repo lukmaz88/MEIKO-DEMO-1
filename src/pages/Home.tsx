@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { usePageTitle } from '../components/layout/Layout';
-import { Certs, DeptContacts, NetworkMarquee, ProofStrip, ServiceCards } from '../components/sections';
-import { Button, Container, ImgReveal, Reveal } from '../components/ui';
+import { Certs, DeptContacts, NetworkMarquee, ServiceCards } from '../components/sections';
+import { Button, Container, ImgReveal, Reveal, Stat } from '../components/ui';
 import { homeCopy } from '../content/home';
 import { useHref, useLang, useT } from '../i18n/LangContext';
 import '../styles/home.css';
@@ -40,9 +40,6 @@ export function Home() {
         <img className="home-hero-media" src="/media/hero-poster.jpg" alt="" fetchPriority="high" />
         {video && <video className="home-hero-media" src="/media/hero-long.mp4" muted playsInline loop autoPlay preload="none" poster="/media/hero-poster.jpg" aria-hidden="true" />}
         <div className="home-hero-shade" />
-        <div className="home-hero-light" aria-hidden="true" />
-        <div className="home-hero-grain" aria-hidden="true" />
-        <div className="home-hero-fade" aria-hidden="true" />
         <Container>
           <div className="home-hero-copy enter">
             <h1>{words(c.title[0], 0)}<span>{words(c.title[1], c.title[0].split(' ').length)}</span></h1>
@@ -52,10 +49,11 @@ export function Home() {
               <Button href="#uslugi" variant="light">{t.cta.services}</Button>
             </div>
           </div>
+          <div className="hero-stats">
+            {t.proof.map((p) => <Stat key={p.factKey} label={p.label} factKey={p.factKey} />)}
+          </div>
         </Container>
       </section>
-
-      <ProofStrip />
 
       <Reveal as="section" className="home-section">
         <Container>

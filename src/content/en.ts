@@ -22,7 +22,6 @@ export const en: Content = {
   proof: [
     { label: 'Meiko Group heritage since', factKey: 'since' },
     { label: 'Certifications', factKey: 'certs' },
-    { label: 'People on the team', factKey: 'team' },
     { label: 'Warehouse space', factKey: 'sqm' },
   ],
   services: {

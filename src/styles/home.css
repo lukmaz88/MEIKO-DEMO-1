@@ -10,12 +10,11 @@
 .home-section-head { display: block; max-width: 820px; margin-bottom: 44px; }
 .home-section-head > p, .home-section-head > div > p { margin-top: 20px; }
 .home-section-head > p, .home-section-head > div > p { color: var(--ink-2); font-size: 17px; line-height: 1.75; max-width: 49ch; }
-.home-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 72dvh; display: flex; align-items: center; background: var(--home-navy); color: white; }
-.home-hero .home-hero-media { animation: kenburns 28s ease-out both; }
+.home-hero { position: relative; isolation: isolate; overflow: hidden; min-height: calc(100dvh - 72px); display: flex; align-items: center; background: var(--home-navy); color: white; }
 .home-hero-media, .home-hero-shade { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; z-index: -1; }
-.home-hero-shade { background: linear-gradient(90deg, rgba(6,28,46,.92), rgba(6,28,46,.68) 56%, rgba(6,28,46,.23)), linear-gradient(0deg, rgba(6,28,46,.5), transparent 50%); }
+.home-hero-shade { background: linear-gradient(90deg, rgba(6, 28, 46, .9) 0%, rgba(6, 28, 46, .62) 42%, rgba(6, 28, 46, .12) 100%); }
 .home-hero > .container { width: 100%; }
-.home-hero-copy { padding: 88px 0; max-width: 960px; }
+.home-hero-copy { padding: 64px 0 40px; max-width: 960px; }
 .home-hero .eyebrow { color: #d9e8f4; margin-bottom: 26px; }
 .home-hero h1 { font-size: clamp(38px, 4vw, 60px); font-weight: 600; letter-spacing: -.04em; line-height: 1.1; text-wrap: initial; max-width: 30ch; }
 .home-hero h1 span { display: block; color: #a9d0f4; }
@@ -162,7 +161,7 @@
 }
 
 /* hero headline: words rise one after another */
-.home-hero h1 .w { display: inline-block; white-space: pre; opacity: 0; transform: translateY(.6em) rotate(2deg); animation: wordrise .9s var(--ease) forwards; animation-delay: calc(.15s + var(--i) * 70ms); transform-origin: left bottom; }
+.home-hero h1 .w { display: inline-block; white-space: pre; opacity: 0; transform: translateX(-.5em); animation: wordrise .8s var(--ease) forwards; animation-delay: calc(.1s + var(--i) * 60ms); }
 @keyframes wordrise { to { opacity: 1; transform: none; } }
 .home-hero .enter > h1 { opacity: 1; animation: none; }
 /* section headlines wipe in from a mask once the section is in view */
@@ -216,13 +215,13 @@
 }
 @media (prefers-reduced-motion: reduce) { .strip-track, .home-warehouse-photo .imgr img, .industry-detail > img, .industry-detail .industry-copy { animation: none; } }
 
-/* hero atmosphere: drifting light, film grain, seamless fade into the page */
-.home-hero-light { position: absolute; inset: -20%; z-index: -1; pointer-events: none; background: radial-gradient(38% 45% at 30% 40%, rgba(90, 150, 220, .28), transparent 70%); mix-blend-mode: screen; animation: lightdrift 22s ease-in-out infinite alternate; }
-@keyframes lightdrift { from { transform: translate(-6%, -4%) scale(1); } to { transform: translate(10%, 8%) scale(1.15); } }
-.home-hero-grain { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .09; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .8 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 160px 160px; animation: grain 1.2s steps(6) infinite; }
-@keyframes grain { to { background-position: 160px 80px; } }
-.home-hero-fade { position: absolute; left: 0; right: 0; bottom: 0; height: 180px; z-index: 0; pointer-events: none; background: linear-gradient(180deg, rgba(247, 248, 250, 0), var(--bg)); }
-.home-hero { isolation: isolate; }
-.home-hero-copy { position: relative; z-index: 1; }
-.home-hero .home-hero-media { animation-duration: 32s; }
-@media (prefers-reduced-motion: reduce) { .home-hero-light, .home-hero-grain { animation: none; } }
+
+/* hero copy slides in from the left; stats live inside the hero, above the video */
+.home-hero .enter > * { animation-name: slidein; }
+@keyframes slidein { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: none; } }
+.hero-stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; border-top: 1px solid rgba(255, 255, 255, .22); padding: 28px 0 40px; color: #fff; animation: slidein .9s .8s var(--ease) both; }
+.hero-stats .stat-value { color: #fff; }
+.hero-stats .stat-label { color: rgba(255, 255, 255, .7); }
+.hero-stats .stat + .stat { border-left: 1px solid rgba(255, 255, 255, .18); padding-left: 24px; }
+@media (max-width: 700px) { .hero-stats { grid-template-columns: 1fr; gap: 14px; padding: 20px 0 28px; } .hero-stats .stat + .stat { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255, 255, 255, .18); padding-top: 14px; } }
+@media (prefers-reduced-motion: reduce) { .hero-stats { animation: none; } }

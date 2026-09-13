@@ -22,7 +22,6 @@ export const pl: Content = {
   proof: [
     { label: 'Tradycja grupy Meiko od', factKey: 'since' },
     { label: 'Certyfikaty', factKey: 'certs' },
-    { label: 'Osób w zespole', factKey: 'team' },
     { label: 'Powierzchni magazynowej', factKey: 'sqm' },
   ],
   services: {
