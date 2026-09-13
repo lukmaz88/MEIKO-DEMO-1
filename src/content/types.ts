@@ -55,6 +55,13 @@ export type Content = {
     submit: string;
     success: { title: string; text: string };
     errors: { required: string; email: string };
+    flow: {
+      steps: [string, string, string];
+      services: { slug: string; name: string; icon: string; verb: string }[];
+      sentence: { before: string; cargo: string; from: string; fromPh: string; to: string; toPh: string; cargoPh: string };
+      who: string; whoPh: string; reach: string; reachPh: string;
+      next: string; back: string; summary: string;
+    };
   };
   about: {
     title: string; lead: string;

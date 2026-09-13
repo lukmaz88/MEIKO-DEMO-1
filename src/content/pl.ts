@@ -208,6 +208,20 @@ export const pl: Content = {
     submit: 'Wyślij zapytanie',
     success: { title: 'Dziękujemy. Zapytanie dotarło.', text: 'Opiekun zlecenia odezwie się w ciągu jednego dnia roboczego na podany adres e-mail lub telefon.' },
     errors: { required: 'To pole jest wymagane.', email: 'Podaj poprawny adres e-mail.' },
+    flow: {
+      steps: ['Czego potrzebujesz', 'Co i skąd', 'Jak się odezwać'],
+      services: [
+        { slug: 'spedycja', name: 'Spedycja', icon: 'globe', verb: 'wysłania' },
+        { slug: 'transport', name: 'Transport międzynarodowy', icon: 'truck', verb: 'przewiezienia' },
+        { slug: 'magazynowanie', name: 'Magazynowanie', icon: 'warehouse', verb: 'zmagazynowania' },
+        { slug: 'cross-docking', name: 'Cross-docking', icon: 'crossdock', verb: 'przeładowania' },
+        { slug: 'clo', name: 'Obsługa celna', icon: 'customs', verb: 'odprawienia' },
+        { slug: 'inne', name: 'Coś innego', icon: 'sliders', verb: 'obsłużenia' },
+      ],
+      sentence: { before: 'Mam do', cargo: 'co', cargoPh: 'np. 12 palet komponentów', from: 'z', fromPh: 'miasto', to: 'do', toPh: 'miasto', },
+      who: 'Imię i firma', whoPh: 'np. Anna Kowal, Firma Sp. z o.o.', reach: 'E-mail lub telefon', reachPh: 'anna@firma.pl albo +48 600 100 200',
+      next: 'Dalej', back: 'Wróć', summary: 'Podsumowanie',
+    },
   },
   about: {
     title: 'Japońska precyzja. Śląski adres.',

@@ -208,6 +208,20 @@ export const en: Content = {
     submit: 'Send the request',
     success: { title: 'Thank you. Your request has arrived.', text: 'Your order owner will get back to you within one working day by email or phone.' },
     errors: { required: 'This field is required.', email: 'Enter a valid email address.' },
+    flow: {
+      steps: ['What you need', 'What and where', 'How to reach you'],
+      services: [
+        { slug: 'spedycja', name: 'Freight forwarding', icon: 'globe', verb: 'ship' },
+        { slug: 'transport', name: 'International transport', icon: 'truck', verb: 'move' },
+        { slug: 'magazynowanie', name: 'Warehousing', icon: 'warehouse', verb: 'store' },
+        { slug: 'cross-docking', name: 'Cross-docking', icon: 'crossdock', verb: 'tranship' },
+        { slug: 'clo', name: 'Customs', icon: 'customs', verb: 'clear' },
+        { slug: 'inne', name: 'Something else', icon: 'sliders', verb: 'handle' },
+      ],
+      sentence: { before: 'I need to', cargo: 'what', cargoPh: 'e.g. 12 pallets of components', from: 'from', fromPh: 'city', to: 'to', toPh: 'city', },
+      who: 'Name and company', whoPh: 'e.g. Anna Kowal, Firma Ltd.', reach: 'Email or phone', reachPh: 'anna@company.com or +48 600 100 200',
+      next: 'Next', back: 'Back', summary: 'Summary',
+    },
   },
   about: {
     title: 'Japanese precision. A Silesian address.',
