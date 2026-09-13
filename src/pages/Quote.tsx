@@ -76,7 +76,7 @@ export function Quote() {
 
                 <div className="row">
                   <span className="lbl">{f.route}</span>
-                  <div className="route">
+                  <div className="qroute">
                     <div className="pin"><img src="/media/icons/pin.png" alt="" /><small>{f.from}</small><input id="from" aria-label={f.from} value={from} onChange={(e) => setFrom(e.target.value)} placeholder={f.fromPh} /></div>
                     <div className="pin"><img src="/media/icons/pin.png" alt="" /><small>{f.to}</small><input id="to" aria-label={f.to} value={to} onChange={(e) => setTo(e.target.value)} placeholder={f.toPh} /></div>
                   </div>
