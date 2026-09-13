@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Intro } from '../ui';
 import { Link, Navigate, NavLink, Outlet, useLocation, useParams } from 'react-router';
 import { LangProvider, useHref, useLang, useT } from '../../i18n/LangContext';
 import { isLang, twinPath } from '../../i18n/routes';
@@ -115,6 +116,7 @@ export function Layout() {
   if (!isLang(lang)) return <Navigate to="/pl" replace />;
   return (
     <LangProvider lang={lang}>
+      <Intro />
       <ScrollToTop />
       <Header />
       <main key={useLocation().pathname} className="page-enter">

@@ -150,3 +150,27 @@ export function Placeholder({ label, className = '' }: { label: string; classNam
 export function Logo({ light = false }: { light?: boolean }) {
   return <img className="brand" src={light ? '/media/logo-light.png' : '/media/logo.png'} alt="Meiko Trans Polska" width={2047} height={339} />;
 }
+
+/** First-visit intro: the mark settles, then two ink panels part to reveal the page. Skipped on reduced motion and repeat visits in the session. */
+export function Intro() {
+  const [show, setShow] = useState(() => {
+    try {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
+      if (sessionStorage.getItem('intro')) return false;
+      sessionStorage.setItem('intro', '1');
+      return true;
+    } catch { return false; }
+  });
+  useEffect(() => {
+    if (!show) return;
+    const t = setTimeout(() => setShow(false), 2200);
+    return () => clearTimeout(t);
+  }, [show]);
+  if (!show) return null;
+  return (
+    <div className="intro" aria-hidden="true">
+      <div className="intro-pane top" /><div className="intro-pane bottom" />
+      <img className="intro-mark" src="/media/mark.png" alt="" />
+    </div>
+  );
+}

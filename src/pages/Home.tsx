@@ -7,7 +7,7 @@ import { homeCopy } from '../content/home';
 import { useHref, useLang, useT } from '../i18n/LangContext';
 import '../styles/home.css';
 
-const audienceImages = ['gen-manufacturing.jpg', 'still-bigbags.jpg', 'still-aerial.jpg'];
+const audienceImages = ['gen-manufacturing.jpg', 'still-bigbags.jpg', 'gen-operators.jpg'];
 const ROTATE_MS = 7000;
 /** Split a line into word spans with a staggered delay index. */
 const words = (line: string, offset: number) =>
@@ -113,6 +113,14 @@ export function Home() {
           </div>
         </Container>
       </Reveal>
+
+      <section className="strip" aria-hidden="true">
+        <div className="strip-track">
+          {['still-aisle', 'still-forklift', 'still-bigbags', 'gen-manufacturing', 'still-wall-logo', 'gen-transport', 'still-flags', 'wh3-render'].map((n) => (
+            <img key={n} src={`/media/${n}.jpg`} alt="" loading="lazy" />
+          ))}
+        </div>
+      </section>
 
       <Reveal as="section" className="home-section home-about">
         <Container>

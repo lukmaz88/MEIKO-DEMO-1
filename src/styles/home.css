@@ -49,7 +49,9 @@
 .industry-copy li { font-size: 14px; padding: 7px 0 7px 18px; position: relative; }
 .industry-copy li::before { content: ""; position: absolute; left: 0; top: 14px; width: 8px; height: 1px; background: #98c6ee; }
 @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-.industry-detail { animation: fadein .5s var(--ease) both; }
+@keyframes wipe { from { clip-path: polygon(0 0, 0 0, -20% 100%, -20% 100%); } to { clip-path: polygon(0 0, 120% 0, 100% 100%, -20% 100%); } }
+.industry-detail .industry-copy { animation: fadein .5s var(--ease) both; }
+.industry-detail > img { animation: wipe .8s var(--ease) both; }
 .industry-copy a { display: inline-flex; gap: 28px; font-size: 14px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid #ffffff50; }
 .industry-detail > img { width: 100%; height: 370px; object-fit: cover; border-radius: 4px; }
 .home-warehouse-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
@@ -203,3 +205,19 @@
 .industry-select.auto button[aria-selected="true"] .tab-progress { animation: tabfill var(--rotate) linear forwards; }
 @keyframes tabfill { to { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .tab-progress { display: none; } }
+
+/* film strip: the row slides sideways as the page scrolls */
+.strip { overflow: hidden; padding: 0 0 var(--sec); }
+.strip-track { display: flex; gap: 16px; width: max-content; transform: translateX(0); }
+.strip-track img { width: clamp(260px, 22vw, 420px); aspect-ratio: 3/2; object-fit: cover; border-radius: var(--r); }
+@supports (animation-timeline: view()) {
+  @keyframes slideleft { from { transform: translateX(6vw); } to { transform: translateX(calc(-100% + 100vw - 6vw)); } }
+  .strip-track { animation: slideleft linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
+}
+/* warehouse photos drift inside their frames while scrolling */
+@supports (animation-timeline: view()) {
+  @keyframes whdrift { from { transform: scale(1.15) translateY(5%); } to { transform: scale(1.15) translateY(-5%); } }
+  .reveal.in .home-warehouse-photo .imgr img { animation: whdrift linear both; animation-timeline: view(); transition: none; }
+  .home-warehouse:hover .imgr img { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) { .strip-track, .home-warehouse-photo .imgr img, .industry-detail > img, .industry-detail .industry-copy { animation: none; } }
