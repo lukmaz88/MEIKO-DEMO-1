@@ -10,7 +10,7 @@ import '../styles/home.css';
 const services = [
   { key: 'svcForwarding', image: 'still-office.jpg', hash: '' },
   { key: 'svcWarehousing', image: 'still-aisle.jpg', hash: '' },
-  { key: 'svcTransport', image: 'still-aerial.jpg', hash: '' },
+  { key: 'svcTransport', image: 'gen-transport.jpg', hash: '' },
   { key: 'svcWarehousing', image: 'still-forklift.jpg', hash: '#cross-docking' },
 ] as const;
 const audienceImages = ['still-bigbags.jpg', 'still-aisle.jpg', 'still-forklift.jpg'];
@@ -71,6 +71,15 @@ export function Home() {
       </Reveal>
 
       <Reveal as="section" className="home-industries home-section">
+        <svg className="route" viewBox="0 0 1600 600" preserveAspectRatio="none" aria-hidden="true">
+          <path className="route-path" d="M-20 470 C 200 420, 320 300, 520 330 S 860 480, 1060 300 S 1380 120, 1640 180" />
+          <g className="route-nodes">
+            <circle cx="520" cy="330" r="4" /><circle cx="1060" cy="300" r="4" /><circle cx="1380" cy="150" r="4" />
+          </g>
+          <circle className="route-dot" r="6">
+            <animateMotion dur="16s" repeatCount="indefinite" path="M-20 470 C 200 420, 320 300, 520 330 S 860 480, 1060 300 S 1380 120, 1640 180" />
+          </circle>
+        </svg>
         <Container>
           <div className="home-section-head"><h2>{c.audienceTitle}</h2><p>{c.audienceLead}</p></div>
           <div className="industry-select" role="tablist" aria-label={c.audienceLabel}>

@@ -358,3 +358,23 @@
 .reveal .sec-head h2 { clip-path: inset(0 0 100% 0); transform: translateY(24px); transition: clip-path .8s var(--ease), transform .8s var(--ease); }
 .reveal.in .sec-head h2 { clip-path: inset(0 0 -10% 0); transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal .sec-head h2 { clip-path: none; transform: none; transition: none; } }
+
+/* route change: page fades and lifts in */
+@keyframes pagein { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.page-enter { animation: pagein .5s var(--ease) both; }
+@media (prefers-reduced-motion: reduce) { .page-enter { animation: none; } }
+
+/* header compacts as the page scrolls (Chromium scroll-driven; static elsewhere) */
+@supports (animation-timeline: scroll()) {
+  @keyframes hdrshrink { to { background: rgba(247, 248, 250, .97); box-shadow: 0 1px 0 var(--line); } }
+  @keyframes hdrrow { to { height: 62px; } }
+  .hdr { animation: hdrshrink linear both; animation-timeline: scroll(); animation-range: 0 160px; }
+  .hdr-in { animation: hdrrow linear both; animation-timeline: scroll(); animation-range: 0 160px; }
+  /* subpage hero image drifts slower than the page */
+  @keyframes pdrift { to { transform: translateY(18%) scale(1.04); } }
+  .phero-img img { animation: pdrift linear both; animation-timeline: scroll(); animation-range: 0 80vh; }
+}
+/* faq answer fades in */
+@keyframes faqin { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.faq details[open] p { animation: faqin .35s var(--ease) both; }
+@media (prefers-reduced-motion: reduce) { .hdr, .hdr-in, .phero-img img, .faq details[open] p { animation: none; } }

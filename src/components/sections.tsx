@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { useHref, useT } from '../i18n/LangContext';
 import { facts } from '../data/facts';
 import type { Faq as FaqT, Param } from '../content/types';
-import { Approved, Button, Container, ImgReveal, Kanji, Marquee, Placeholder, Reveal, Stat } from './ui';
+import { Approved, Button, Container, CountUp, ImgReveal, Kanji, Marquee, Placeholder, Reveal, Stat } from './ui';
 
 /* ---------------- Hero ---------------- */
 export function Hero() {
@@ -258,7 +258,7 @@ export function ParamTable({ rows }: { rows: Param[] }) {
   return (
     <dl className={`params ${rows.length === 3 ? 'p3' : ''}`}>
       {rows.map((r) => (
-        <div key={r.label}><dt>{r.label}</dt><dd><Approved fact={facts[r.factKey]} /></dd></div>
+        <div key={r.label}><dt>{r.label}</dt><dd><CountUp fact={facts[r.factKey]} /></dd></div>
       ))}
     </dl>
   );

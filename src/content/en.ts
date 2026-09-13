@@ -73,7 +73,7 @@ export const en: Content = {
         key: 'svcTransport', slug: 'transport', name: 'International transport',
         short: 'A network of proven carriers across Europe plus air and ocean freight.',
         lead: 'Road transport across Europe with long-standing partners, and for farther destinations air and ocean freight through ports and airports we have worked with for years.',
-        image: '/media/still-aerial.jpg',
+        image: '/media/gen-transport.jpg',
         params: [
           { label: 'Partner carriers', factKey: 'carrierPartners' },
           { label: 'Countries served', factKey: 'countries' },

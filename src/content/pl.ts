@@ -73,7 +73,7 @@ export const pl: Content = {
         key: 'svcTransport', slug: 'transport', name: 'Transport międzynarodowy',
         short: 'Sieć sprawdzonych przewoźników w Europie oraz fracht lotniczy i morski.',
         lead: 'Transport drogowy po Europie na bazie stałych partnerów, a dla dalszych kierunków fracht lotniczy i morski przez porty i lotniska, z którymi współpracujemy od lat.',
-        image: '/media/still-aerial.jpg',
+        image: '/media/gen-transport.jpg',
         params: [
           { label: 'Przewoźników partnerskich', factKey: 'carrierPartners' },
           { label: 'Krajów obsługi', factKey: 'countries' },

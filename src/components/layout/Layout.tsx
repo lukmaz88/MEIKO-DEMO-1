@@ -117,7 +117,7 @@ export function Layout() {
     <LangProvider lang={lang}>
       <ScrollToTop />
       <Header />
-      <main>
+      <main key={useLocation().pathname} className="page-enter">
         <Outlet />
       </main>
       <Footer />
