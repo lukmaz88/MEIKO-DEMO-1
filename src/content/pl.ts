@@ -197,11 +197,11 @@ export const pl: Content = {
   },
   quoteBand: {
     title: 'Opisz, co i skąd wysyłasz. Resztę policzymy.',
-    lead: 'Sześć pól, jeden dzień roboczy na odpowiedź.',
+    lead: 'Trzy krótkie kroki, jeden dzień roboczy na odpowiedź.',
   },
   quote: {
     title: 'Zapytanie ofertowe',
-    lead: 'Wypełnij sześć pól. Odpowiadamy w ciągu jednego dnia roboczego.',
+    lead: 'Trzy krótkie kroki. Odpowiadamy w ciągu jednego dnia roboczego.',
     reply: 'Odpowiadamy w ciągu jednego dnia roboczego.',
     fields: { contact: 'Osoba kontaktowa', email: 'Adres e-mail', service: 'Usługa', company: 'Nazwa firmy', phone: 'Telefon', cargo: 'Rodzaj ładunku' },
     servicePlaceholder: 'Wybierz usługę',

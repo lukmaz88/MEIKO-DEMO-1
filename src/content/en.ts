@@ -197,11 +197,11 @@ export const en: Content = {
   },
   quoteBand: {
     title: 'Tell us what you ship and from where. We do the maths.',
-    lead: 'Six fields, one working day to reply.',
+    lead: 'Three short steps, one working day to reply.',
   },
   quote: {
     title: 'Request a quotation',
-    lead: 'Fill in six fields. We reply within one working day.',
+    lead: 'Three short steps. We reply within one working day.',
     reply: 'We reply within one working day.',
     fields: { contact: 'Contact person', email: 'Email address', service: 'Requested service', company: 'Company name', phone: 'Telephone', cargo: 'Cargo type' },
     servicePlaceholder: 'Choose a service',
