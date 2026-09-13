@@ -12,8 +12,8 @@
   --font-h: "Manrope", system-ui, sans-serif;
   --font-b: "Inter", system-ui, sans-serif;
   --font-jp: "Noto Sans JP", sans-serif;
-  --max: 1320px;
-  --gutter: clamp(20px, 4vw, 48px);
+  --max: 1720px;
+  --gutter: clamp(20px, 3vw, 64px);
   --sec: clamp(80px, 12vw, 160px);
   --r: 6px;
   --ease: cubic-bezier(.2, .7, .2, 1);
@@ -48,7 +48,7 @@ ul { padding: 0; list-style: none; }
 
 /* wide screens: more room, slightly larger type */
 @media (min-width: 1700px) {
-  :root { --max: 1600px; --sec: clamp(120px, 9vw, 200px); }
+  :root { --max: 1920px; --sec: clamp(120px, 9vw, 200px); }
   body { font-size: 19px; }
   h1 { font-size: clamp(56px, 5vw, 104px); }
   h2 { font-size: clamp(40px, 3.4vw, 68px); }

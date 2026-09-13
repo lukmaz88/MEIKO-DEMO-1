@@ -7,7 +7,7 @@
 .home-page .eyebrow::before { width: 18px; height: 2px; }
 .home-page .btn { height: 52px; border-radius: 4px; gap: 24px; }
 .home-section { padding: 96px 0; }
-.home-section-head { display: block; max-width: 820px; margin-bottom: 48px; }
+.home-section-head { display: block; max-width: 900px; margin-bottom: 48px; }
 .home-section-head > p, .home-section-head > div > p { margin-top: 20px; }
 .home-section-head > p, .home-section-head > div > p { color: var(--ink-2); font-size: 17px; line-height: 1.75; max-width: 49ch; }
 .home-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 80dvh; display: flex; align-items: center; background: var(--home-navy); color: white; }
@@ -15,7 +15,7 @@
 .home-hero-media, .home-hero-shade { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; z-index: -1; }
 .home-hero-shade { background: linear-gradient(90deg, rgba(6,28,46,.92), rgba(6,28,46,.68) 56%, rgba(6,28,46,.23)), linear-gradient(0deg, rgba(6,28,46,.5), transparent 50%); }
 .home-hero > .container { width: 100%; }
-.home-hero-copy { padding: 96px 0; max-width: 1000px; }
+.home-hero-copy { padding: 96px 0; max-width: 1100px; }
 .home-hero .eyebrow { color: #d9e8f4; margin-bottom: 26px; }
 .home-hero h1 { font-size: clamp(38px, 4.4vw, 64px); font-weight: 600; letter-spacing: -.04em; line-height: 1.1; text-wrap: initial; max-width: 30ch; }
 .home-hero h1 span { display: block; color: #a9d0f4; }
