@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Intro } from '../ui';
 import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate, useParams } from 'react-router';
 import { LangProvider, useHref, useLang, useT } from '../../i18n/LangContext';
@@ -127,8 +127,8 @@ export function Layout() {
   const start = (to: string, target: Lang) => {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) { navigate(to, { state: { langSwitch: true } }); return; }
     setVeil(target);
-    setTimeout(() => navigate(to, { state: { langSwitch: true } }), 420);
-    setTimeout(() => setVeil(null), 1000);
+    setTimeout(() => navigate(to, { state: { langSwitch: true } }), 560);
+    setTimeout(() => setVeil(null), 1350);
   };
   if (!isLang(lang)) return <Navigate to="/pl" replace />;
   const switched = !!(state as { langSwitch?: boolean } | null)?.langSwitch;
@@ -136,7 +136,25 @@ export function Layout() {
     <LangProvider lang={lang}>
       <SwitchCtx.Provider value={start}>
         <Intro />
-        {veil && <div className="lang-veil" aria-hidden="true"><span>{veil.toUpperCase()}</span></div>}
+        {veil && (
+          <div className="lang-veil" aria-hidden="true">
+            {[0, 1, 2, 3, 4, 5].map((i) => <i key={i} className="bar" style={{ '--i': i } as React.CSSProperties} />)}
+            <div className="flag">
+              {veil === 'pl' ? (
+                <svg viewBox="0 0 16 10"><rect width="16" height="5" fill="#fff" /><rect y="5" width="16" height="5" fill="#DC143C" /></svg>
+              ) : (
+                <svg viewBox="0 0 60 30">
+                  <rect width="60" height="30" fill="#012169" />
+                  <path d="M0 0L60 30M60 0L0 30" stroke="#fff" strokeWidth="6" />
+                  <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" strokeWidth="2" />
+                  <path d="M30 0V30M0 15H60" stroke="#fff" strokeWidth="10" />
+                  <path d="M30 0V30M0 15H60" stroke="#C8102E" strokeWidth="6" />
+                </svg>
+              )}
+              <span>{veil === 'pl' ? 'Polski' : 'English'}</span>
+            </div>
+          </div>
+        )}
         <ScrollToTop />
         <Header />
         <main key={pathname} className={switched ? 'lang-swap' : 'page-enter'}>
