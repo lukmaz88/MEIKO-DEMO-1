@@ -16,7 +16,7 @@ export function Reveal({ children, className = '', as: Tag = 'div' }: { children
     if (!el) return;
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) { el.classList.add('in'); io.disconnect(); } }),
-      { threshold: 0.15 },
+      { threshold: 0.05, rootMargin: '0px 0px -10% 0px' },
     );
     io.observe(el);
     return () => io.disconnect();
