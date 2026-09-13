@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { Intro } from '../ui';
-import { Link, Navigate, NavLink, Outlet, useLocation, useParams } from 'react-router';
+import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate, useParams } from 'react-router';
 import { LangProvider, useHref, useLang, useT } from '../../i18n/LangContext';
-import { isLang, twinPath } from '../../i18n/routes';
+import { isLang, twinPath, type Lang } from '../../i18n/routes';
+
+/** Language switch choreography: a navy veil sweeps across, the route changes underneath, scroll position stays. */
+const SwitchCtx = createContext<(to: string, target: Lang) => void>(() => {});
 import { Button, Container, Kanji, Logo } from '../ui';
 import { SHOW_APPROVAL_MARKS } from '../../config';
 
@@ -17,8 +20,11 @@ function LangSwitch() {
   const { pathname, search } = useLocation();
   const lang = useLang();
   const t = useT();
+  const start = useContext(SwitchCtx);
+  const target: Lang = lang === 'pl' ? 'en' : 'pl';
+  const to = twinPath(pathname, search);
   return (
-    <Link to={twinPath(pathname, search)} className="lang" aria-label={t.ui.language}>
+    <Link to={to} state={{ langSwitch: true }} className="lang" aria-label={t.ui.language} onClick={(e) => { e.preventDefault(); start(to, target); }}>
       <span className={lang === 'pl' ? 'on' : ''}>PL</span>
       <span className={lang === 'en' ? 'on' : ''}>EN</span>
     </Link>
@@ -100,8 +106,9 @@ function Footer() {
 }
 
 function ScrollToTop() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, state } = useLocation();
   useEffect(() => {
+    if ((state as { langSwitch?: boolean } | null)?.langSwitch) return; // language switch keeps the reader where they were
     if (hash) {
       const el = document.querySelector(hash);
       if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
@@ -113,17 +120,30 @@ function ScrollToTop() {
 
 export function Layout() {
   const { lang } = useParams();
+  const navigate = useNavigate();
+  const { pathname, state } = useLocation();
+  const [veil, setVeil] = useState<Lang | null>(null);
   useEffect(() => { if (isLang(lang)) document.documentElement.lang = lang; }, [lang]);
+  const start = (to: string, target: Lang) => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { navigate(to, { state: { langSwitch: true } }); return; }
+    setVeil(target);
+    setTimeout(() => navigate(to, { state: { langSwitch: true } }), 420);
+    setTimeout(() => setVeil(null), 1000);
+  };
   if (!isLang(lang)) return <Navigate to="/pl" replace />;
+  const switched = !!(state as { langSwitch?: boolean } | null)?.langSwitch;
   return (
     <LangProvider lang={lang}>
-      <Intro />
-      <ScrollToTop />
-      <Header />
-      <main key={useLocation().pathname} className="page-enter">
-        <Outlet />
-      </main>
-      <Footer />
+      <SwitchCtx.Provider value={start}>
+        <Intro />
+        {veil && <div className="lang-veil" aria-hidden="true"><span>{veil.toUpperCase()}</span></div>}
+        <ScrollToTop />
+        <Header />
+        <main key={pathname} className={switched ? 'lang-swap' : 'page-enter'}>
+          <Outlet />
+        </main>
+        <Footer />
+      </SwitchCtx.Provider>
     </LangProvider>
   );
 }
