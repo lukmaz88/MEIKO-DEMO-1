@@ -38,8 +38,11 @@ export function Home() {
     <div className="home-page">
       <section className="home-hero">
         <img className="home-hero-media" src="/media/hero-poster.jpg" alt="" fetchPriority="high" />
-        {video && <video className="home-hero-media" src="/media/hero.mp4" muted playsInline loop autoPlay preload="none" poster="/media/hero-poster.jpg" aria-hidden="true" />}
+        {video && <video className="home-hero-media" src="/media/hero-long.mp4" muted playsInline loop autoPlay preload="none" poster="/media/hero-poster.jpg" aria-hidden="true" />}
         <div className="home-hero-shade" />
+        <div className="home-hero-light" aria-hidden="true" />
+        <div className="home-hero-grain" aria-hidden="true" />
+        <div className="home-hero-fade" aria-hidden="true" />
         <Container>
           <div className="home-hero-copy enter">
             <h1>{words(c.title[0], 0)}<span>{words(c.title[1], c.title[0].split(' ').length)}</span></h1>

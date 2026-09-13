@@ -20,7 +20,7 @@ export function Hero() {
   return (
     <section className="hero">
       <img className="hero-media" src="/media/hero-poster.jpg" alt="" fetchPriority="high" />
-      {video && <video className="hero-media" src="/media/hero.mp4" muted playsInline loop autoPlay preload="none" poster="/media/hero-poster.jpg" />}
+      {video && <video className="hero-media" src="/media/hero-long.mp4" muted playsInline loop autoPlay preload="none" poster="/media/hero-poster.jpg" />}
       <div className="hero-shade" />
       <Container>
         <div className="hero-copy enter">

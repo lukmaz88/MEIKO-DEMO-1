@@ -215,3 +215,14 @@
   .home-warehouse:hover .imgr img { animation-play-state: paused; }
 }
 @media (prefers-reduced-motion: reduce) { .strip-track, .home-warehouse-photo .imgr img, .industry-detail > img, .industry-detail .industry-copy { animation: none; } }
+
+/* hero atmosphere: drifting light, film grain, seamless fade into the page */
+.home-hero-light { position: absolute; inset: -20%; z-index: -1; pointer-events: none; background: radial-gradient(38% 45% at 30% 40%, rgba(90, 150, 220, .28), transparent 70%); mix-blend-mode: screen; animation: lightdrift 22s ease-in-out infinite alternate; }
+@keyframes lightdrift { from { transform: translate(-6%, -4%) scale(1); } to { transform: translate(10%, 8%) scale(1.15); } }
+.home-hero-grain { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .09; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .8 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 160px 160px; animation: grain 1.2s steps(6) infinite; }
+@keyframes grain { to { background-position: 160px 80px; } }
+.home-hero-fade { position: absolute; left: 0; right: 0; bottom: 0; height: 180px; z-index: 0; pointer-events: none; background: linear-gradient(180deg, rgba(247, 248, 250, 0), var(--bg)); }
+.home-hero { isolation: isolate; }
+.home-hero-copy { position: relative; z-index: 1; }
+.home-hero .home-hero-media { animation-duration: 32s; }
+@media (prefers-reduced-motion: reduce) { .home-hero-light, .home-hero-grain { animation: none; } }
