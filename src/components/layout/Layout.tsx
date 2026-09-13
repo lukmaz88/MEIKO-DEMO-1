@@ -127,8 +127,8 @@ export function Layout() {
   const start = (to: string, target: Lang) => {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) { navigate(to, { state: { langSwitch: true } }); return; }
     setVeil(target);
-    setTimeout(() => navigate(to, { state: { langSwitch: true } }), 780);
-    setTimeout(() => setVeil(null), 1900);
+    setTimeout(() => navigate(to, { state: { langSwitch: true } }), 560);
+    setTimeout(() => setVeil(null), 1350);
   };
   if (!isLang(lang)) return <Navigate to="/pl" replace />;
   const switched = !!(state as { langSwitch?: boolean } | null)?.langSwitch;
@@ -151,7 +151,6 @@ export function Layout() {
                   <path d="M30 0V30M0 15H60" stroke="#C8102E" strokeWidth="6" />
                 </svg>
               )}
-              <span>{veil === 'pl' ? 'Polski' : 'English'}</span>
             </div>
           </div>
         )}
