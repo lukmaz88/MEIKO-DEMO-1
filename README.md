@@ -38,5 +38,5 @@ Wymaga `imageio_ffmpeg` i `Pillow`. Pliki źródłowe (`*.mp4`, `*.pptx`) nie s�
 ## Przed prezentacją
 
 1. `SHOW_APPROVAL_MARKS = false` w `src/config.ts`, jeśli kropki mają zniknąć.
-2. Grafiki wygenerowane w ChatGPT (styl dopasowany do ujęć z drona): `wh3-render.jpg`, `team.jpg`, `gen-transport.jpg`, `gen-forwarding.jpg`, `gen-manufacturing.jpg`. Do dogenerowania: zdjęcia dla zakładek „Handel i dystrybucja” i „Operatorzy logistyczni” (obecnie kadry z filmu).
-3. Efekty ruchu (wszystkie wyłączane przez `prefers-reduced-motion`): wjazd hero słowo po słowie, zoom wideo, kurtyny na zdjęciach, stagger siatek, odliczanie liczb, maskowane nagłówki, linia tras w sekcji branż, auto-rotacja zakładek, paralaksa (Chromium), kurczący się header, przejścia między stronami.
+2. Grafiki wygenerowane w ChatGPT (styl dopasowany do ujęć z drona): `wh3-render.jpg`, `team.jpg`, `gen-transport.jpg`, `gen-forwarding.jpg`, `gen-manufacturing.jpg`, `gen-retail.jpg`, `gen-operators.jpg`.
+3. Efekty ruchu (wszystkie wyłączane przez `prefers-reduced-motion`): wjazd hero słowo po słowie, zoom wideo, kurtyny na zdjęciach, stagger siatek, odliczanie liczb, maskowane nagłówki, linia tras w sekcji branż, auto-rotacja zakładek, paralaksa (Chromium), kurczący się header, przejścia między stronami, intro z logo (raz na sesję), taśma kadrów sterowana scrollem, rysująca się oś czasu, kanji z rozmycia, ukośne przejścia zdjęć w zakładkach, dryf zdjęć magazynów.
