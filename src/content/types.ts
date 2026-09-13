@@ -77,6 +77,7 @@ export type Content = {
   contact: { title: string; lead: string; locationsTitle: string; locations: { name: string; address: string }[] };
   footer: { legal: string; docs: string[]; pagesTitle: string; docsTitle: string; langTitle: string; note: string; address: string };
   faqTitle: string;
+  ui: { close: string; menu: string; language: string; mainNav: string };
   approval: { tooltip: string; legend: string };
   notFound: { title: string; text: string };
 };

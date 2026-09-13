@@ -301,6 +301,7 @@ export const en: Content = {
     address: 'ul. Leona Wyczółkowskiego 121, 44-109 Gliwice, Poland',
   },
   faqTitle: 'Questions and answers',
+  ui: { close: 'Close', menu: 'Menu', language: 'Language', mainNav: 'Main navigation' },
   approval: { tooltip: 'Sample value, to be approved before publication', legend: 'value to be approved' },
   notFound: { title: 'This page does not exist.', text: 'The address may have changed. Go back to the home page and pick from the menu.' },
 };

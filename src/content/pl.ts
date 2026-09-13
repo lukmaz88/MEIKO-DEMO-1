@@ -301,6 +301,7 @@ export const pl: Content = {
     address: 'ul. Leona Wyczółkowskiego 121, 44-109 Gliwice',
   },
   faqTitle: 'Pytania i odpowiedzi',
+  ui: { close: 'Zamknij', menu: 'Menu', language: 'Język', mainNav: 'Nawigacja główna' },
   approval: { tooltip: 'Wartość przykładowa, do zatwierdzenia przed publikacją', legend: 'wartość do zatwierdzenia' },
   notFound: { title: 'Nie ma takiej strony.', text: 'Adres mógł się zmienić. Wróć na stronę główną i wybierz z menu.' },
 };
