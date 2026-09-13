@@ -188,7 +188,7 @@
 
 /* placeholders */
 .ph { border: 1px dashed var(--ink-3); border-radius: var(--r); display: grid; place-items: center; color: var(--ink-3); font-size: 13px; text-align: center; padding: 16px; background: repeating-linear-gradient(135deg, transparent 0 14px, rgba(14, 40, 65, .03) 14px 28px); }
-.ph.map { aspect-ratio: 4/3; }
+.ph.map { aspect-ratio: 16/9; max-height: 360px; }
 .ph.render { min-height: 300px; }
 .wh-tile .ph { position: absolute; inset: 0; height: 100%; color: rgba(255, 255, 255, .7); border-color: rgba(255, 255, 255, .35); background: var(--ink); }
 
