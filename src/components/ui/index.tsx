@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router';
 import { SHOW_APPROVAL_MARKS } from '../../config';
 import { facts, type Fact, type FactKey } from '../../data/facts';
@@ -184,10 +185,11 @@ export function Lightbox({ src, alt, onClose }: { src: string; alt: string; onCl
     document.body.style.overflow = 'hidden';
     return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = prev; };
   }, [onClose]);
-  return (
+  return createPortal(
     <div className="lightbox" role="dialog" aria-modal="true" aria-label={alt} onClick={onClose}>
       <button type="button" className="lightbox-close" aria-label="Zamknij" onClick={onClose}>×</button>
       <img src={src} alt={alt} onClick={(e) => e.stopPropagation()} />
-    </div>
+    </div>,
+    document.body,
   );
 }
