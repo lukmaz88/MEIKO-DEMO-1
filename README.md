@@ -9,7 +9,6 @@ npm i
 npm run dev          # http://localhost:5173/pl
 npm run build        # statyczne pliki w dist/
 npx serve dist -s    # podgląd builda (SPA fallback)
-npx vitest run       # testy: parytet PL/EN tras i treści, formularz
 ```
 
 ## Gdzie co jest
@@ -25,15 +24,9 @@ npx vitest run       # testy: parytet PL/EN tras i treści, formularz
 | Style (tokeny / komponenty) | `src/styles/tokens.css`, `src/styles/components.css` |
 | Media (wideo hero, kadry, logo) | `public/media/` |
 
-## Media
+## Publikacja
 
-`scripts/media.py` tnie kadry z `../MTP 2025.mp4`; pętla hero `hero-long.mp4` (31 s, 5 ujęć: 0:37, 1:00, 1:15, 1:24, 1:39, przejścia xfade) była składana ręcznie ffmpegiem w dwóch przebiegach (klipy CFR, potem xfade), kadry i eksportuje grafiki z PPTX. Uruchamiać z katalogu `app/`:
-
-```bash
-python scripts/media.py
-```
-
-Wymaga `imageio_ffmpeg` i `Pillow`. Pliki źródłowe (`*.mp4`, `*.pptx`) nie są w repo.
+Push na `main` buduje stronę i publikuje ją na GitHub Pages (`.github/workflows/pages.yml`, `BASE_PATH=/MEIKO-DEMO-1/`).
 
 ## Przed prezentacją
 

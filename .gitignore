@@ -1,4 +1,12 @@
 node_modules
 dist
 *.mp4
+!public/media/hero-long.mp4
 *.pptx
+
+# not needed to run the site
+src/test/
+scripts/
+src/assets/
+public/_redirects
+.oxlintrc.json
