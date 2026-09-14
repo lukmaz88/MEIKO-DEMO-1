@@ -26,7 +26,7 @@ npx serve dist -s    # podgląd builda (SPA fallback)
 
 ## Publikacja
 
-Push na `main` buduje stronę i publikuje ją na GitHub Pages (`.github/workflows/pages.yml`, `BASE_PATH=/MEIKO-DEMO-1/`).
+`npm run deploy` buduje stronę z `BASE_PATH=/MEIKO-DEMO-1/` i wypycha `dist/` na gałąź `gh-pages`, z której serwuje GitHub Pages: https://lukmaz88.github.io/MEIKO-DEMO-1/
 
 ## Przed prezentacją
 
